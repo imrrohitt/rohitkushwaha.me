@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_head %}
+{% from "_icons.html" import icon %}
+{% block title %}Milestones — {{ site.name }}{% endblock %}
+{% block description %}Awards, education, talks and community moments from {{ site.name }}'s career.{% endblock %}
+
+{% block content %}
+{{ page_head("Milestones", "Moments <em>that mattered</em>", "The awards, degrees, talks and rooms I've been part of — and the work behind each one.") }}
+
+<div class="wrap miles">
+  {% for m in milestones %}
+  <article class="mile card" id="{{ m.id }}" data-reveal>
+    <div class="mile-aside">
+      <p class="eyebrow">{{ m.kind }} <span class="eyebrow-dot" aria-hidden="true"></span> {{ m.when }}</p>
+      {% if m.image %}
+      <figure class="mile-photo"><img src="{{ m.image }}" alt="{{ m.image_alt }}" loading="lazy" style="object-position: {{ m.image_position or '50% 30%' }}"></figure>
+      {% endif %}
+    </div>
+    <div class="mile-main">
+      <h2>{{ m.title }}</h2>
+      <p class="mile-intro">{{ m.intro }}</p>
+      {% if m.stats %}
+      <dl class="mile-stats">
+        {% for s in m.stats %}<div><dd>{{ s.value }}</dd><dt>{{ s.label }}</dt></div>{% endfor %}
+      </dl>
+      {% endif %}
+      <h3 class="mile-heading">{{ m.heading }}</h3>
+      <ul class="mile-points">
+        {% for p in m.points %}<li>{{ p | md }}</li>{% endfor %}
+      </ul>
+      {% if m.outro %}<p class="mile-outro">{{ m.outro }}</p>{% endif %}
+      {% if m.links %}
+      <p class="mile-links">
+        {% for l in m.links %}<a class="link-arrow" href="{{ l.url }}"{% if l.url.startswith("http") %} target="_blank" rel="noopener"{% endif %}>{{ l.label }} {{ icon("arrow-up-right", 14) }}</a>{% endfor %}
+      </p>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

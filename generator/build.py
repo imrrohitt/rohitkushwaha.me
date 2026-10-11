@@ -191,6 +191,7 @@ def build(include_drafts: bool = False) -> None:
     project_data = load_yaml("projects")
     projects, more_projects = project_data["projects"], project_data.get("more", [])
     experience = load_yaml("experience")
+    milestones = load_yaml("milestones")
     talks = sorted(load_yaml("talks"), key=sort_key, reverse=True)
     videos = sorted(load_yaml("videos"), key=sort_key, reverse=True)
     papers = sorted(load_yaml("papers"), key=sort_key, reverse=True)
@@ -238,7 +239,8 @@ def build(include_drafts: bool = False) -> None:
 
     render("index.html", "/", featured_article=featured_article,
            writing=[w for w in writing if w is not featured_article][:5], projects=projects,
-           experience=experience, talks=talks[:2], videos=videos[:5], papers=papers[:5], explore=explore)
+           experience=experience, talks=talks[:2], videos=videos[:5], papers=papers[:5], explore=explore,
+           milestones=[m for m in milestones if m.get("home")])
     render("blog_list.html", "/blogs/", "blogs", writing=writing, featured_article=featured_article)
     for i, post in enumerate(posts):
         newer = posts[i - 1] if i > 0 else None
@@ -248,7 +250,8 @@ def build(include_drafts: bool = False) -> None:
     render("talks.html", "/talks/", "talks", talks=talks)
     render("videos.html", "/videos/", "videos", videos=videos)
     render("papers.html", "/papers/", "papers", papers=papers)
-    render("about.html", "/about/", "about", experience=experience)
+    render("about.html", "/about/", "about", experience=experience, milestones=milestones)
+    render("milestones.html", "/milestones/", "milestones", milestones=milestones)
     render("404.html", "/404.html")
 
     write("feed.xml", build_feed(site, base_url, writing))

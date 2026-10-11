@@ -22,7 +22,14 @@
 </header>
 
 <section class="section wrap">
-  {{ section_head("01", "The story", "From full-stack <em>to systems at scale</em>") }}
+  {{ section_head("01", "About me", "A little more <em>about me</em>") }}
+  <div class="about-prose" data-reveal>
+    {% for para in site.about_me %}<p>{{ para | md }}</p>{% endfor %}
+  </div>
+</section>
+
+<section class="section wrap">
+  {{ section_head("02", "The story", "From full-stack <em>to systems at scale</em>") }}
   <ol class="story">
     {% for ch in site.story %}
     <li class="story-item" data-reveal>
@@ -37,7 +44,7 @@
 </section>
 
 <section class="section wrap">
-  {{ section_head("02", "Experience", "Where I've <em>worked</em>") }}
+  {{ section_head("03", "Experience", "Where I've <em>worked</em>") }}
   <ol class="timeline timeline-full" data-reveal>
     {% for job in experience %}
     <li class="{% if loop.first %}is-current{% endif %}">
@@ -56,7 +63,7 @@
 </section>
 
 <section class="section wrap">
-  {{ section_head("03", "Toolbox", "What I <em>work with</em>") }}
+  {{ section_head("04", "Toolbox", "What I <em>work with</em>") }}
   <dl class="skills card" data-reveal>
     {% for s in site.skills %}
     <div><dt>{{ s.group }}</dt><dd>{{ s["items"] }}</dd></div>
@@ -65,7 +72,10 @@
 </section>
 
 <section class="section wrap">
-  {{ section_head("04", "Recognition", "Awards, <em>education &amp; community</em>") }}
-  {{ recognition_cards(site.recognition) }}
+  {{ section_head("05", "Milestones", "Recognition, <em>education &amp; community</em>", "/milestones/", "All milestones") }}
+  {{ recognition_cards(milestones) }}
+  <div class="edu-line" data-reveal>
+    {% for e in site.education %}<p><strong>{{ e.degree }}</strong> · {{ e.school }} · {{ e.period }} · {{ e.note }}</p>{% endfor %}
+  </div>
 </section>
 {% endblock %}

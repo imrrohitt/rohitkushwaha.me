@@ -93,47 +93,47 @@ education:
     period: 2021 – 2023
     note: CGPA 8.75 / 10
 
-# Recognition, milestones and community. Entries with an image get a photo card.
-# `home: true` shows the entry on the home page.
-recognition:
-  - kind: Award
-    when: W3villa Technologies
-    title: Rising Star
-    text: >-
-      Recognised as a Rising Star at W3villa Technologies for pushing what's possible with AI —
-      an intense, rewarding stretch of building and shipping.
-    image: /static/images/w3villa-rising-star.jpg
-    image_position: 50% 22%
-    image_alt: Rohit holding the Rising Star trophy at W3villa Technologies
-    home: true
-  - kind: Education
-    when: "2023"
-    title: Master of Computer Applications — topper
-    text: >-
-      Graduated with a Master of Computer Applications from Kanpur Institute of Technology
-      (CGPA 8.75 / 10), as the topper of the batch.
-    image: /static/images/mca-convocation.jpg
-    image_position: 50% 30%
-    image_alt: Rohit receiving his MCA certificate and medal at the convocation ceremony
-    home: true
-  - kind: Community
-    when: Pune Developers Community
-    title: "Beyond Data Silos: Microsoft Fabric & Azure AI Foundry"
-    text: >-
-      Attended this meetup on how modern enterprises combine unified data platforms with AI
-      services to go from raw data to production-ready AI systems — enterprise AI application
-      development, AI agents and intelligent systems, data and AI integration at scale, and
-      real-world adoption of Microsoft's AI ecosystem. Thanks to Murari Ramuka for the practical
-      insights, and to the Pune tech community for the conversations.
-    image: /static/images/meetup-microsoft-pune.jpg
-    image_position: 50% 24%
-    image_alt: Rohit at the Pune Developers Community meetup on Microsoft Fabric and Azure AI Foundry
-    home: true
-  - kind: Speaking
-    when: "2025"
-    title: Speaker, Google I/O Extended Kanpur
-    text: Spoke to 3,000+ developers about building intelligent AI agents and chatbots with Generative AI and Google ADK.
-  - kind: Competition
-    when: "2024"
-    title: "National Rank #2 — Nextlevel Backend Developer Challenge"
-    text: Placed 2nd among 5,000+ participants (Unacademy), recognised for API design and system architecture.
+
+about_me:
+  - >-
+    I'm a software engineer from Kanpur, now based in Pune, and I build products end to end.
+    My career started in full-stack web development — Ruby on Rails and React apps where I owned
+    everything from the database schema to the last pixel — and that habit of owning the whole
+    thing has stayed with me through every role since.
+  - >-
+    I studied for my MCA at Kanpur Institute of Technology and graduated as the
+    [topper of the batch](/milestones/#mca-topper). I joined W3villa Technologies in February 2023
+    and spent three and a half years there, growing from building features to leading whole products
+    as **Tech Lead** — sitting with clients, shaping roadmaps, making the architecture calls and
+    leading the engineers who shipped it.
+  - >-
+    Along the way AI became a big part of that work. I led multi-tenant agent platforms past
+    120,000 interactions a month, fine-tuned models for dependable tool calling, rebuilt search
+    around hybrid retrieval, and cut LLM costs by more than a third. That stretch earned me the
+    company's [Rising Star award](/milestones/#rising-star).
+  - >-
+    Today I'm a Senior AI Engineer at Academian in Pune. I work on the infrastructure that AI
+    products stand on: distributed vector search holding over twenty billion embeddings, model
+    serving that does three times the work in a quarter of the memory, and multilingual pipelines
+    that turn days of work into minutes.
+  - >-
+    I like a problem best when it starts as a business question and ends as a system in production.
+    I care about latency, cost and reliability as much as accuracy — and I'd rather measure
+    something than argue about it.
+  - >-
+    Outside work I build in the open. [OpenDynamicGGUF](https://github.com/imrrohitt/OpenDynamicGGUF)
+    is an open-source optimiser that picks the right bit-width for every tensor of an LLM, and
+    [Niyam](https://github.com/imrohit4077/niyam) is a multi-tenant hiring platform; there's more on
+    [GitHub](https://github.com/imrrohitt) and in my [projects](/projects/).
+  - >-
+    I write about engineering on [Medium](https://medium.com/@imrohitkushwaha2001), speak at
+    developer events — most recently [Google I/O Extended Kanpur](/milestones/#google-io-extended),
+    where I talked to more than 3,000 developers — and went back to my college to speak with students
+    about [careers in AI](/talks/). I also attended the
+    [Microsoft Fabric & Azure AI Foundry meetup](/milestones/#pune-microsoft-meetup) with the
+    Pune Developers Community, and placed [second nationally](/milestones/#national-rank-2) in
+    Unacademy's Nextlevel backend challenge.
+  - >-
+    If you're building something that needs to ship, scale and make business sense, I'd be glad
+    to hear about it — [say hello](mailto:imrohitkushwaha2001@gmail.com) or find me on
+    [LinkedIn](https://www.linkedin.com/in/rohit-kushwaha-6915b7197/).

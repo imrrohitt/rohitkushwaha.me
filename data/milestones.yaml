@@ -1,0 +1,112 @@
+# Milestones — shown as a timeline on /milestones/, and as cards on the home and About pages.
+# home: true  → also appears on the home page.   image_position: CSS object-position for the crop.
+
+- id: rising-star
+  kind: Award
+  when: W3villa Technologies
+  title: Rising Star
+  home: true
+  image: /static/images/w3villa-rising-star.jpg
+  image_position: 50% 22%
+  image_alt: Rohit holding the Rising Star trophy at W3villa Technologies
+  summary: Recognised as a Rising Star at W3villa Technologies for pushing what's possible with AI — and for shipping it into real products.
+  intro: >-
+    The Rising Star award came after an intense, rewarding stretch at W3villa Technologies,
+    where I took AI out of experiments and into products that enterprise customers use every day.
+  stats:
+    - { value: "120K+", label: "agent interactions a month" }
+    - { value: "98%", label: "intent accuracy" }
+    - { value: "38%", label: "lower LLM spend" }
+    - { value: "60%", label: "fewer prompt incidents" }
+  heading: The work behind it
+  points:
+    - "**AI agents customers actually use.** Led multi-tenant agent platforms for HRMS, CRM and LMS products — past 120,000 interactions a month, at 98% intent accuracy and under two seconds a response."
+    - "**Reliable tool calling.** Fine-tuned small models with LoRA and QLoRA so they call tools predictably — 34% more deterministic, with 41% fewer hallucinations."
+    - "**Search that feels instant.** Rebuilt retrieval around hybrid keyword + vector search with reranking, taking latency from 420ms to 273ms and making a million enterprise records easier to find."
+    - "**Smaller bills, faster answers.** Moved serving to vLLM and TensorRT with quantisation and semantic caching — three times the throughput and 38% lower overall LLM spend."
+    - "**Voice that keeps up.** Built real-time voice assistants that hold a conversation in under 300 milliseconds."
+    - "**Guardrails for a team.** Introduced evaluation and a version-controlled prompt system, cutting prompt-related incidents by 60%."
+
+- id: mca-topper
+  kind: Education
+  when: "2021 – 2023"
+  title: Master of Computer Applications — topper
+  home: true
+  image: /static/images/mca-convocation.jpg
+  image_position: 50% 30%
+  image_alt: Rohit receiving his MCA certificate and medal at the convocation ceremony
+  summary: Graduated as the topper of the MCA batch at Kanpur Institute of Technology, with a CGPA of 8.75 out of 10.
+  intro: >-
+    I completed my Master of Computer Applications at Kanpur Institute of Technology and graduated
+    as the topper of the batch — receiving the certificate and medal on stage at the convocation.
+  stats:
+    - { value: "8.75", label: "CGPA out of 10" }
+    - { value: "#1", label: "topper of the batch" }
+    - { value: "2023", label: "graduated" }
+  heading: What it set in motion
+  points:
+    - "**A foundation in the fundamentals.** Data structures, databases, operating systems and software engineering — the unglamorous basics that every system I build still leans on."
+    - "**Straight into industry.** I joined W3villa Technologies in February 2023, as the degree wrapped up, and started building products for real customers."
+    - "**Giving back.** Years later I returned to the same college as an alumnus to speak to students about [why AI matters for their careers](/talks/)."
+
+- id: pune-microsoft-meetup
+  kind: Community
+  when: Pune Developers Community
+  title: "Beyond Data Silos: Microsoft Fabric & Azure AI Foundry"
+  home: true
+  image: /static/images/meetup-microsoft-pune.jpg
+  image_position: 50% 24%
+  image_alt: Rohit at the Pune Developers Community meetup on Microsoft Fabric and Azure AI Foundry
+  summary: A meetup on how enterprises go from raw data to production-ready AI by combining unified data platforms with AI services.
+  intro: >-
+    I attended this Pune Developers Community meetup, "Beyond Data Silos: Crafting Intelligent
+    Applications with Microsoft Fabric & Azure AI Foundry" — a practical look at how modern
+    enterprises are building AI-powered applications.
+  heading: What stood out
+  points:
+    - "**Enterprise AI application development** — how unified data platforms and AI services fit together on the way from raw data to production."
+    - "**AI agents and intelligent systems** — where agentic patterns genuinely help inside a company."
+    - "**Data and AI integration at scale** — keeping the data layer and the AI layer honest with each other."
+    - "**Real-world adoption** — how Microsoft's AI ecosystem is actually being used by teams today."
+  outro: Thank you to Murari Ramuka for the practical insights, industry experience and a clear view of where enterprise AI is heading — and to the Pune tech community for the conversations.
+
+- id: google-io-extended
+  kind: Speaking
+  when: "August 2025"
+  title: Speaker, Google I/O Extended Kanpur
+  home: false
+  image: /static/images/talk-gdg-io-extended-2025.jpg
+  image_position: 50% 50%
+  image_alt: Google I/O Extended Kanpur speaker card for Rohit Kushwaha
+  summary: Spoke to 3,000+ developers about building intelligent AI agents with Google's Agent Development Kit.
+  intro: >-
+    I was invited to speak at Google I/O Extended Kanpur, organised by GDG Kanpur — a session on
+    building intelligent chatbots and AI agents with Generative AI and Google's Agent Development Kit.
+  stats:
+    - { value: "3,000+", label: "developers reached" }
+  heading: What I covered
+  points:
+    - "**Agent architecture** with Google's Agent Development Kit."
+    - "**Tools, memory and multi-agent orchestration.**"
+    - "**RAG architectures** with LangChain and LlamaIndex."
+    - "**Taking assistants to production** — the part most demos skip."
+  links:
+    - { label: Event post on LinkedIn, url: "https://www.linkedin.com/posts/googleioextended-gdgkanpur-codevidya-share-7364261306574520321-fJi2/" }
+    - { label: Talk details, url: /talks/ }
+
+- id: national-rank-2
+  kind: Competition
+  when: "2024"
+  title: National Rank #2 — Nextlevel Backend Developer Challenge
+  home: false
+  summary: Placed 2nd among 5,000+ participants in Unacademy's Nextlevel backend developer challenge.
+  intro: >-
+    I placed second nationwide among more than five thousand participants in the Nextlevel
+    Backend Developer Challenge, run by Unacademy.
+  stats:
+    - { value: "#2", label: "national rank" }
+    - { value: "5,000+", label: "participants" }
+  heading: Why it mattered
+  points:
+    - "**Judged on fundamentals** — API design and system architecture, not framework trivia."
+    - "**A habit I kept.** Clean boundaries and well-designed contracts between services are still the first thing I look at in any backend I build."
