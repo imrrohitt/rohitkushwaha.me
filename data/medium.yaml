@@ -10,6 +10,7 @@
   - artificial-intelligence
   - llm
   reading_time: 8
+  hidden: true
 - title: 'OpenDynamicGGUF: An Open, Measured, Reproducible Optimizer for Per-Tensor GGUF Quantization'
   url: https://medium.com/@imrohitkushwaha2001/opendynamicgguf-an-open-measured-reproducible-optimizer-for-per-tensor-gguf-quantization-6ca130764ee4
   date: 2026-09-12
