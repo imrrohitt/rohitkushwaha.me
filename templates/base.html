@@ -15,10 +15,10 @@
   <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0c0c0b" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/static/images/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="/static/images/favicon-192.png" type="image/png" sizes="192x192">
-  <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico?v={{ build_id }}" sizes="any">
+  <link rel="icon" href="/static/images/favicon-32.png?v={{ build_id }}" type="image/png" sizes="32x32">
+  <link rel="icon" href="/static/images/favicon-192.png?v={{ build_id }}" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png?v={{ build_id }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
   <script>
     (function () {
@@ -42,7 +42,7 @@
     <div class="wrap">
     <div class="header-inner">
       <a class="brand" href="/" aria-label="{{ site.name }}, home">
-        <img class="brand-mark" src="/static/images/favicon-192.png" alt="" width="32" height="32">
+        <img class="brand-mark" src="/static/images/favicon-192.png?v={{ build_id }}" alt="" width="32" height="32">
         <span class="brand-name">{{ site.name }}</span>
       </a>
 
@@ -103,7 +103,7 @@
 
       <div class="footer-grid">
         <div class="footer-about">
-          <a class="brand" href="/"><img class="brand-mark" src="/static/images/favicon-192.png" alt="" width="32" height="32"><span class="brand-name">{{ site.name }}</span></a>
+          <a class="brand" href="/"><img class="brand-mark" src="/static/images/favicon-192.png?v={{ build_id }}" alt="" width="32" height="32"><span class="brand-name">{{ site.name }}</span></a>
           <p>{{ site.role }} · {{ site.previous_role }}, {{ site.location }}. Building AI products end to end — models, backends, frontends and infrastructure.</p>
         </div>
         <div>
