@@ -78,4 +78,17 @@
     {% for e in site.education %}<p><strong>{{ e.degree }}</strong> · {{ e.school }} · {{ e.period }} · {{ e.note }}</p>{% endfor %}
   </div>
 </section>
+<section class="section wrap">
+  <div class="card connect" data-reveal>
+    <div>
+      <p class="eyebrow"><span class="eyebrow-num">→</span> Let's connect</p>
+      <h2>Want to talk? <em>Book a call.</em></h2>
+      <p>Career advice, a second opinion on an architecture, or a conversation about building something together — grab a slot on Topmate, or write to me directly.</p>
+    </div>
+    <div class="connect-actions">
+      <a class="btn btn-primary btn-lg" href="{{ site.topmate }}" target="_blank" rel="noopener">{{ icon("calendar", 17) }} Book on Topmate</a>
+      <a class="btn btn-ghost btn-lg" href="mailto:{{ site.email }}">{{ icon("mail", 17) }} Email me</a>
+    </div>
+  </div>
+</section>
 {% endblock %}

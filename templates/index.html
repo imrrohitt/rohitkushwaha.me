@@ -18,7 +18,7 @@
       <p class="hero-intro rise" style="--d: 160ms">{{ site.intro | md }}</p>
       <div class="hero-actions rise" style="--d: 240ms">
         <a class="btn btn-primary" href="/projects/">See my work {{ icon("arrow-right", 16) }}</a>
-        <a class="btn btn-ghost" href="/about/">About me</a>
+        <a class="btn btn-ghost" href="{{ site.topmate }}" target="_blank" rel="noopener">{{ icon("calendar", 16) }} Book a call</a>
       </div>
       <div class="rise" style="--d: 320ms">
         {{ socials(site.links) }}

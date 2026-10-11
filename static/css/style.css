@@ -1179,3 +1179,22 @@ a.recog-card:hover .link-arrow { color: var(--accent); }
   .mile-photo img { max-height: 340px; }
   .mile-main { padding: 24px 22px 26px; }
 }
+
+/* Topmate / connect */
+.cta-book { display: flex; align-items: center; gap: 16px; padding: 20px 26px; text-decoration: none; color: inherit; background: var(--accent-soft); border-bottom: 1px solid var(--line); transition: background-color 0.3s var(--ease); }
+.cta-book > .icon:first-child { color: var(--accent); flex: none; }
+.cta-book span { flex: 1; display: grid; gap: 2px; }
+.cta-book strong { font-size: 15.5px; font-weight: 600; letter-spacing: -0.01em; }
+.cta-book em { font-style: normal; font-size: 13.5px; color: var(--muted); line-height: 1.4; }
+.cta-book .go { color: var(--faint); transition: transform 0.3s var(--ease), color 0.3s var(--ease); }
+.cta-book:hover { background: color-mix(in srgb, var(--accent-soft) 70%, var(--surface)); }
+.cta-book:hover .go { transform: translate(3px, -3px); color: var(--accent); }
+
+.connect { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 40px; align-items: center; padding: 40px 44px; }
+.connect h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.05; letter-spacing: -0.028em; margin: 4px 0 12px; }
+.connect h2 em { color: var(--muted); }
+.connect p:last-child { color: var(--muted); font-size: 15.5px; margin: 0; max-width: 34em; }
+.connect-actions { display: grid; gap: 10px; }
+.connect-actions .btn { justify-content: center; }
+@media (max-width: 900px) { .connect { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 28px 24px; } }
+@media (max-width: 640px) { .cta-book { padding: 18px 20px; } }
