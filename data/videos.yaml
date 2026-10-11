@@ -1,20 +1,6 @@
 # Videos worth watching. date = when you watched it (YYYY-MM).
 # topic is one of AI / Engineering / Fundamentals.
 
-- title: "Jev by TypeSafe AI — What is a System-1 Decision Model"
-  channel: CampusX
-  url: https://www.youtube.com/watch?v=0zFfcEr1e9U
-  date: 2026-10
-  topic: AI
-  note: TypeSafe's Jev returns typed decisions instead of text — a new category next to LLMs.
-
-- title: "Did OpenAI just clone Jev? Everything you missed from OpenAI DevDay"
-  channel: Tech Unfiltered
-  url: https://www.youtube.com/watch?v=-OoQFrkz0RE
-  date: 2026-10
-  topic: AI
-  note: OpenAI's new Decisions API — fast, structured choices without hallucination.
-
 - title: "Anthropic IPO, OpenAI DevDay Recap, And Why Are Decision Models Everywhere?"
   channel: Mastra
   url: https://www.youtube.com/watch?v=4mvgHJj9l7s
