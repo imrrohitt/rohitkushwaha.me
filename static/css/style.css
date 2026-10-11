@@ -1040,3 +1040,118 @@ a.recog-card:hover .link-arrow { color: var(--accent); }
   .mile-stats > div { flex: 1 1 calc(50% - 6px); min-width: 0; }
   .about-prose p { font-size: 16.5px; }
 }
+
+/* ==========================================================================
+   Mobile polish — compact, one idea per screen
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* header */
+  .site-header { padding-top: 10px; }
+  .header-inner { height: 54px; padding: 0 8px 0 12px; border-radius: 16px; }
+  .brand-name { font-size: 14px; }
+  .icon-btn { width: 38px; height: 38px; }
+
+  /* hero: name, two lines, one button, one row of small icons */
+  .hero { padding: 36px 0 44px; }
+  .kicker { font-size: 13.5px; gap: 10px; }
+  .kicker-line { width: 22px; }
+  .hero-title { font-size: 15.4cqi; margin: 18px 0 16px; }
+  .hero-intro { font-size: 1.02rem; line-height: 1.55; margin-bottom: 22px; }
+  .hero-actions { margin-bottom: 18px; }
+  .hero-actions .btn-ghost { display: none; }
+  .hero-actions .btn { width: 100%; justify-content: center; height: 48px; }
+  .socials { gap: 8px; flex-wrap: nowrap; }
+  .socials li { flex: 1 1 0; }
+  .social, .social:hover { width: 100%; height: 46px; padding: 0; justify-content: center; border-radius: 14px; }
+  .social-label, .social:hover .social-label { display: none; }
+  .portrait { max-width: none; margin-top: 8px; }
+  .portrait-frame { padding: 6px; border-radius: 22px; }
+  .portrait-frame img { aspect-ratio: 5 / 4; object-position: 50% 14%; border-radius: 17px; }
+  .portrait-glow { display: none; }
+  .portrait-tag { left: 14px; bottom: 14px; font-size: 11px; padding: 6px 11px 6px 10px; }
+
+  /* at a glance: 2 × 2 */
+  .glance { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding-top: 4px; }
+  .glance-item { padding: 16px 16px 18px; border-radius: 16px; gap: 4px; }
+  .glance-label { font-size: 9.5px; margin-bottom: 2px; }
+  .glance-title { font-size: 1.2rem; }
+  .glance-text { display: none; }
+
+  /* rhythm */
+  .section { padding-top: 64px; }
+  .section-head { margin-bottom: 22px; gap: 10px; }
+  .section-title { font-size: 2.2rem; }
+  .section-head .link-arrow { font-size: 13.5px; }
+  .eyebrow { font-size: 10.5px; margin-bottom: 10px; }
+
+  /* what I do: tight rows */
+  .doing { display: block; border: 0; }
+  .doing li { display: grid; grid-template-columns: 28px minmax(0, 1fr); column-gap: 10px; padding: 16px 0; border: 0; border-top: 1px solid var(--line); }
+  .doing li:last-child { border-bottom: 1px solid var(--line); }
+  .doing-n { margin: 6px 0 0; grid-row: span 2; }
+  .doing h3 { font-size: 1.35rem; margin-bottom: 2px; }
+  .doing p { font-size: 14.5px; }
+
+  /* projects: keep the story, drop the heavy panels */
+  .case-side { padding: 20px 22px 24px; gap: 14px; }
+  .case-side .terminal, .case-side .flow { display: none; }
+  .case-side .case-meta { margin-top: 0; }
+  .case-main { padding: 26px 22px 24px; }
+  .case-title { font-size: 2.3rem; }
+  .case-tagline { font-size: 1.02rem; }
+  .case-summary { font-size: 14.5px; margin-bottom: 16px; }
+  .case-points { margin-bottom: 22px; gap: 8px; }
+  .case-points li { font-size: 14px; }
+  .case-actions { gap: 14px; }
+  .case-actions .btn { height: 44px; }
+  .project-card { padding: 22px; }
+  .project-card h3 { font-size: 1.8rem; }
+  .project-summary { font-size: 14.5px; margin-bottom: 16px; }
+
+  /* experience */
+  .timeline > li { padding-bottom: 28px; }
+  .timeline-text { font-size: 14.5px; }
+  .timeline-points li { font-size: 14.5px; }
+
+  /* cards with photos */
+  .talk-media, .recog-media { aspect-ratio: 16 / 10; }
+  .talk-body, .recog-body { padding: 20px 20px 22px; }
+  .talk-title { font-size: 1.7rem; }
+  .talk-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .talk-facts > div { padding: 8px 9px; }
+  .talk-facts dd { font-size: 12.5px; }
+  .recog-body h3 { font-size: 1.45rem; }
+  .mile-photo img { aspect-ratio: 16 / 11; }
+  .mile-main h2 { font-size: 1.9rem; }
+  .mile-intro { font-size: 15.5px; }
+  .mile-stats dd { font-size: 1.7rem; }
+  .mile-points li { font-size: 14.5px; }
+
+  /* lists, learning cards */
+  .list-row, .year-group .list-row { padding: 18px 10px; margin: 0 -10px; }
+  .list-title { font-size: 16.5px; }
+  .list-brief .list-row { padding: 16px 10px; }
+  .duo-head h3 { font-size: 1.5rem; }
+
+  /* about */
+  .page-head { padding: 44px 0 30px; }
+  .page-title { font-size: 3rem; margin-bottom: 16px; }
+  .page-lede, .about-lede { font-size: 1.02rem; }
+  .about-prose p { font-size: 16px; line-height: 1.7; }
+  .story-body h3 { font-size: 1.6rem; }
+  .skills > div { padding: 12px 0; }
+
+  /* footer */
+  .site-footer { margin-top: 80px; }
+  .cta { padding: 56px 0 48px; gap: 28px; }
+  .cta-title { font-size: 2.5rem; }
+  .cta-mail { padding: 18px 20px; }
+  .cta-mail-addr { font-size: 1.2rem; }
+  .footer-grid { padding: 36px 0; gap: 28px 20px; }
+}
+@media (max-width: 640px) {
+  .case-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .case-meta > div { padding: 9px 10px; }
+  .case-meta dd { font-size: 12.5px; }
+  .case-side .chips { gap: 5px; }
+}
