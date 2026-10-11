@@ -205,11 +205,11 @@ em { font-style: italic; }
   transition: max-width 0.5s var(--ease), opacity 0.3s var(--ease), margin 0.5s var(--ease);
 }
 .social:hover, .social:focus-visible {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--bg);
+  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -12px rgba(18, 18, 17, 0.55);
+  box-shadow: 0 10px 24px -14px color-mix(in srgb, var(--accent) 60%, transparent);
 }
 .social:hover .social-label, .social:focus-visible .social-label { max-width: 110px; opacity: 1; margin-left: 9px; margin-right: 2px; }
 @media (hover: none) {
@@ -838,10 +838,24 @@ a.list-row:hover .list-arrow { opacity: 1; transform: none; color: var(--accent)
    Footer
    ========================================================================== */
 .site-footer { margin-top: 160px; }
-.cta { padding: 96px 0 88px; border-top: 1px solid var(--line); text-align: center; display: flex; flex-direction: column; align-items: center; }
-.cta-title { font-family: var(--display); font-weight: 400; font-size: clamp(3rem, 7.5vw, 6.2rem); line-height: 0.95; letter-spacing: -0.035em; margin: 6px 0 24px; max-width: 12em; }
-.cta-text { color: var(--muted); max-width: 34em; font-size: 1.08rem; margin-bottom: 36px; }
-.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; }
+.cta { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 72px; align-items: end; padding: 96px 0 88px; border-top: 1px solid var(--line); }
+.cta-title { font-family: var(--display); font-weight: 400; font-size: clamp(2.8rem, 5.6vw, 5rem); line-height: 0.98; letter-spacing: -0.032em; margin: 6px 0 22px; }
+.cta-text { color: var(--muted); max-width: 30em; font-size: 1.05rem; margin: 0; }
+.cta-panel { border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); box-shadow: var(--shadow-sm); overflow: hidden; }
+.cta-mail { position: relative; display: grid; gap: 4px; padding: 24px 26px; text-decoration: none; color: inherit; border-bottom: 1px solid var(--line); transition: background-color 0.3s var(--ease); }
+.cta-mail:hover { background: var(--bg-2); }
+.cta-mail-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.cta-mail-addr { font-family: var(--display); font-size: clamp(1.35rem, 2vw, 1.75rem); letter-spacing: -0.015em; overflow-wrap: anywhere; }
+.cta-mail-go { position: absolute; right: 24px; top: 24px; color: var(--faint); transition: transform 0.3s var(--ease), color 0.3s var(--ease); }
+.cta-mail:hover .cta-mail-go { transform: translate(3px, -3px); color: var(--accent); }
+.cta-links { list-style: none; margin: 0; padding: 0; }
+.cta-links li + li { border-top: 1px solid var(--line); }
+.cta-links a { display: flex; align-items: center; gap: 14px; padding: 15px 26px; color: var(--ink-2); text-decoration: none; font-size: 15px; font-weight: 500; transition: background-color 0.25s var(--ease), color 0.25s var(--ease); }
+.cta-links a span { flex: 1; }
+.cta-links .icon { color: var(--muted); transition: color 0.25s var(--ease), transform 0.3s var(--ease); }
+.cta-links a:hover { background: var(--bg-2); color: var(--ink); }
+.cta-links a:hover .icon { color: var(--accent); }
+.cta-links a:hover .go { transform: translate(2px, -2px); }
 
 .footer-grid { display: grid; grid-template-columns: 1.7fr repeat(3, 1fr); gap: 40px; padding: 56px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
 .footer-about p { color: var(--muted); max-width: 300px; margin: 18px 0 0; }
@@ -852,6 +866,8 @@ a.list-row:hover .list-arrow { opacity: 1; transform: none; color: var(--accent)
 .site-footer li a:hover { color: var(--ink); }
 .footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 24px 0 36px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 12px; color: var(--faint); }
 .footer-bottom p { margin: 0; display: inline-flex; align-items: center; gap: 6px; }
+.to-top { display: inline-flex; align-items: center; gap: 6px; color: var(--faint); text-decoration: none; }
+.to-top:hover { color: var(--accent); }
 
 /* ==========================================================================
    Responsive
@@ -868,6 +884,7 @@ a.list-row:hover .list-arrow { opacity: 1; transform: none; color: var(--accent)
 
 @media (max-width: 900px) {
   :root { --gutter: 24px; }
+  .cta { grid-template-columns: minmax(0, 1fr); gap: 40px; padding: 72px 0 64px; }
   .header-inner { height: 64px; }
   .menu-btn { display: inline-grid; }
   .header-actions { margin-left: auto; }
@@ -955,6 +972,7 @@ a.list-row:hover .list-arrow { opacity: 1; transform: none; color: var(--accent)
   .pager { grid-template-columns: 1fr; }
   .pager .next { grid-column: auto; }
   .site-footer { margin-top: 120px; }
-  .cta { padding: 72px 0 64px; }
+  .cta-mail, .cta-links a { padding-left: 20px; padding-right: 20px; }
+  .cta-mail-go { right: 18px; top: 22px; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
 }

@@ -75,12 +75,26 @@
   <footer class="site-footer">
     <div class="wrap">
       <section class="cta" data-reveal>
-        <p class="eyebrow"><span class="eyebrow-num">→</span> Get in touch</p>
-        <h2 class="cta-title">Let's build something <em>that ships.</em></h2>
-        <p class="cta-text">Open to conversations about AI products, SaaS platforms and backend systems — and to speaking at colleges and meetups.</p>
-        <div class="cta-actions">
-          <a class="btn btn-primary btn-lg" href="mailto:{{ site.email }}">{{ icon("mail", 17) }} {{ site.email }}</a>
-          {{ socials(site.links | rejectattr("icon", "equalto", "mail") | list) }}
+        <div class="cta-copy">
+          <p class="eyebrow"><span class="eyebrow-num">→</span> Get in touch</p>
+          <h2 class="cta-title">Let's build something <em>that ships.</em></h2>
+          <p class="cta-text">Open to conversations about AI products, SaaS platforms and backend systems — and to speaking at colleges and meetups.</p>
+        </div>
+        <div class="cta-panel">
+          <a class="cta-mail" href="mailto:{{ site.email }}">
+            <span class="cta-mail-label">Email</span>
+            <span class="cta-mail-addr">{{ site.email }}</span>
+            <span class="cta-mail-go">{{ icon("arrow-up-right", 20) }}</span>
+          </a>
+          <ul class="cta-links">
+            {% for link in site.links if link.icon != "mail" %}
+            <li>
+              <a href="{{ link.url }}" target="_blank" rel="me noopener">
+                {{ icon(link.icon, 18) }}<span>{{ link.label }}</span>{{ icon("arrow-up-right", 16, "go") }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
         </div>
       </section>
 
@@ -119,6 +133,7 @@
       <div class="footer-bottom">
         <p>© {{ year }} {{ site.name }}</p>
         <p class="footer-time">{{ icon("map-pin", 14) }} {{ site.location }} · <span data-clock>IST</span></p>
+        <a class="to-top" href="#main">Back to top {{ icon("arrow-up-right", 14) }}</a>
       </div>
     </div>
   </footer>
