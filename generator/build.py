@@ -224,6 +224,9 @@ def build(include_drafts: bool = False) -> None:
     shutil.copytree(STATIC, DIST / "static")
     if (STATIC / "favicon.ico").exists():
         shutil.copy(STATIC / "favicon.ico", DIST / "favicon.ico")
+    for name in ("CNAME", ".nojekyll"):
+        if (STATIC / name).exists():
+            shutil.copy(STATIC / name, DIST / name)
 
     pages: list[str] = []
 
