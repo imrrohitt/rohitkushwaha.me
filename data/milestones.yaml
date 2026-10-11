@@ -70,43 +70,25 @@
     - "**Real-world adoption** — how Microsoft's AI ecosystem is actually being used by teams today."
   outro: Thank you to Murari Ramuka for the practical insights, industry experience and a clear view of where enterprise AI is heading — and to the Pune tech community for the conversations.
 
-- id: google-io-extended
-  kind: Speaking
-  when: "August 2025"
-  title: Speaker, Google I/O Extended Kanpur
-  home: false
-  image: /static/images/talk-gdg-io-extended-2025.jpg
-  image_position: 50% 50%
-  image_alt: Google I/O Extended Kanpur speaker card for Rohit Kushwaha
-  summary: Spoke to 3,000+ developers about building intelligent AI agents with Google's Agent Development Kit.
-  intro: >-
-    I was invited to speak at Google I/O Extended Kanpur, organised by GDG Kanpur — a session on
-    building intelligent chatbots and AI agents with Generative AI and Google's Agent Development Kit.
-  stats:
-    - { value: "3,000+", label: "developers reached" }
-  heading: What I covered
-  points:
-    - "**Agent architecture** with Google's Agent Development Kit."
-    - "**Tools, memory and multi-agent orchestration.**"
-    - "**RAG architectures** with LangChain and LlamaIndex."
-    - "**Taking assistants to production** — the part most demos skip."
-  links:
-    - { label: Event post on LinkedIn, url: "https://www.linkedin.com/posts/googleioextended-gdgkanpur-codevidya-share-7364261306574520321-fJi2/" }
-    - { label: Talk details, url: /talks/ }
-
-- id: national-rank-2
+- id: nextlevel-challenge
   kind: Competition
-  when: "2024"
-  title: National Rank #2 — Nextlevel Backend Developer Challenge
+  when: Unacademy · Nextlevel
+  title: Nextlevel Backend Developer Challenge — top 3 nationally
   home: false
-  summary: Placed 2nd among 5,000+ participants in Unacademy's Nextlevel backend developer challenge.
+  image: /static/images/nextlevel-result.jpg
+  image_position: 50% 30%
+  image_alt: Result screen from Unacademy's Nextlevel challenge showing a third-place finish in the January 2023 season
+  summary: Placed in the top three nationally in Unacademy's Nextlevel Backend Developer Challenge — 3rd in the January 2023 season and 2nd among 5,000+ participants later on.
   intro: >-
-    I placed second nationwide among more than five thousand participants in the Nextlevel
-    Backend Developer Challenge, run by Unacademy.
+    Unacademy's Nextlevel Backend Developer Challenge is a national contest judged on how well
+    you design and build backend systems. I finished in the top three more than once.
   stats:
-    - { value: "#2", label: "national rank" }
+    - { value: "3rd", label: "January 2023 season" }
+    - { value: "#2", label: "national rank, 2024" }
     - { value: "5,000+", label: "participants" }
-  heading: Why it mattered
+  heading: How it went
   points:
-    - "**Judged on fundamentals** — API design and system architecture, not framework trivia."
+    - "**January 2023 season — 3rd place.** A podium finish, with an Amazon Kindle Paperwhite as the prize."
+    - "**2024 — 2nd nationally,** out of more than five thousand participants."
+    - "**Judged on fundamentals** — API design and system architecture rather than framework trivia."
     - "**A habit I kept.** Clean boundaries and well-designed contracts between services are still the first thing I look at in any backend I build."

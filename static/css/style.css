@@ -1155,3 +1155,27 @@ a.recog-card:hover .link-arrow { color: var(--accent); }
   .case-meta dd { font-size: 12.5px; }
   .case-side .chips { gap: 5px; }
 }
+
+/* Milestones — smaller, and photos shown whole instead of cropped */
+.mile { grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr); }
+.mile-aside { padding: 26px 24px; }
+.mile-aside .eyebrow { margin-bottom: 16px; }
+.mile-photo img { aspect-ratio: auto; height: auto; max-height: 440px; width: 100%; object-fit: cover; display: block; }
+.mile-main { padding: 30px 34px 32px; }
+.mile-main h2 { font-size: clamp(1.7rem, 2.5vw, 2.15rem); margin-bottom: 12px; }
+.mile-intro { font-size: 15px; line-height: 1.65; margin-bottom: 20px; }
+.mile-stats { gap: 10px; margin-bottom: 22px; }
+.mile-stats > div { padding: 10px 14px; min-width: 100px; }
+.mile-stats dd { font-size: 1.6rem; }
+.mile-stats dt { font-size: 12px; margin-top: 4px; }
+.mile-heading { margin-bottom: 10px; }
+.mile-points { gap: 10px; }
+.mile-points li { font-size: 14.5px; line-height: 1.6; }
+.mile-outro { font-size: 14px; margin-top: 16px; padding-top: 14px; }
+.recog-body h3 { font-size: 1.4rem; }
+.recog-body p:not(.eyebrow) { font-size: 14.5px; }
+@media (max-width: 900px) {
+  .mile { grid-template-columns: minmax(0, 1fr); }
+  .mile-photo img { max-height: 340px; }
+  .mile-main { padding: 24px 22px 26px; }
+}
