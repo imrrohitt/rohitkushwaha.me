@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% from "_macros.html" import case_study, project_cards, page_head, section_head %}
+{% from "_icons.html" import icon %}
+{% block title %}Projects — {{ site.name }}{% endblock %}
+{% block description %}Open-source projects and products built by {{ site.name }}.{% endblock %}
+
+{% block content %}
+{{ page_head("Projects", "Things I've <em>built</em>", "Open-source tools and full products — from an LLM quantisation optimiser to a multi-tenant hiring platform. Everything here has its code on <a href=\"" ~ site.github ~ "\" target=\"_blank\" rel=\"noopener\">GitHub</a>.") }}
+<div class="wrap">
+  <div class="case-list">
+    {% for p in projects if p.featured %}{{ case_study(p) }}{% endfor %}
+  </div>
+  {{ project_cards(projects | rejectattr("featured") | list) }}
+</div>
+
+{% if more_projects %}
+<section class="section wrap">
+  {{ section_head("+", "More on GitHub", "Smaller <em>experiments</em>", site.github, "GitHub profile") }}
+  <div class="more-grid">
+    {% for r in more_projects %}
+    <a class="card more-card" href="{{ r.url }}" target="_blank" rel="noopener" data-reveal style="--d: {{ (loop.index0 % 3) * 60 }}ms">
+      <span class="more-top">{{ icon("github", 16) }}<span class="more-name">{{ r.name }}</span><span class="card-arrow">{{ icon("arrow-up-right", 16) }}</span></span>
+      <span class="more-text">{{ r.text }}</span>
+      <span class="chip">{{ r.lang }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

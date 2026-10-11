@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_head, talk_cards %}
+{% block title %}Talks — {{ site.name }}{% endblock %}
+{% block description %}Talks and sessions by {{ site.name }}.{% endblock %}
+
+{% block content %}
+{{ page_head("Talks", "On <em>stage</em>", "Sessions I've given for developer communities and students. If you'd like me to speak at your college or meetup, <a href=\"mailto:" ~ site.email ~ "\">write to me</a>.") }}
+<div class="wrap">
+  {{ talk_cards(talks, detailed=True) }}
+</div>
+{% endblock %}

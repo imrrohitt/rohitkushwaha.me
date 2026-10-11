@@ -1,0 +1,73 @@
+# Order here is the order on the site. `featured: true` projects get the large case-study layout.
+projects:
+
+- name: OpenDynamicGGUF
+  url: https://github.com/imrrohitt/OpenDynamicGGUF
+  repo: imrrohitt/OpenDynamicGGUF
+  featured: true
+  kind: Open source · LLM inference
+  tagline: Dynamic per-tensor mixed-precision GGUF quantisation — for any model.
+  summary: >-
+    Measures how sensitive every tensor is to quantisation, then picks the bit-width for each one
+    under your size or VRAM budget — and ships a reproducible recipe, not just a smaller file.
+  highlights:
+    - Every bit decision traced to a measured ΔKL-divergence probe.
+    - Recipes that rebuild the exact GGUF file, bit for bit.
+    - One pipeline for dense, MoE and SSM models, built on llama.cpp.
+  snippet: |
+    $ odg quantize --model functiongemma:latest \
+        --target-size 3.2GB
+
+    token_embd         -> Q8_0   # pinned
+    attn_v    (all)    -> Q6_K   # sensitive, small
+    attn_q/k  (early)  -> Q5_K
+    ffn_gate  (mid)    -> Q3_K   # large, robust
+    ffn_down  (all)    -> Q4_K
+    output             -> Q8_0   # pinned
+  stack: [Python, PyTorch, llama.cpp, GGUF, Hugging Face, KL-divergence]
+  meta: { language: Python, license: Apache-2.0, status: Alpha }
+  article: https://medium.com/@imrohitkushwaha2001/opendynamicgguf-an-open-measured-reproducible-optimizer-for-per-tensor-gguf-quantization-6ca130764ee4
+
+- name: Niyam
+  url: https://github.com/imrohit4077/niyam
+  repo: imrohit4077/niyam
+  featured: true
+  kind: Open source · Full-stack SaaS
+  tagline: An open-source applicant tracking system for modern hiring teams.
+  summary: >-
+    A multi-tenant ATS in the spirit of Greenhouse and Lever — pipelines, structured interviews,
+    e-signatures and an audit trail, with AI screening that cut manual work by 90%.
+  highlights:
+    - Workspace isolation with account-level data boundaries.
+    - Stage-triggered e-sign automation and a full audit trail.
+    - FastAPI services with Celery workers, Redis and S3-compatible storage.
+  flow: [Kickoff, Job published, Applied, Screening, Interview loop, Debrief, Offer, E-sign, Hired]
+  stack: [FastAPI, PostgreSQL, Redis, Celery, MinIO, React 19, TypeScript, pgvector]
+  meta: { language: Python · TypeScript, license: MIT, status: Active }
+
+- name: Kalki
+  url: https://github.com/imrrohitt/Kalki
+  kind: AI video
+  tagline: An AI editorial engine that turns a talking-head clip into a finished, hook-first vertical reel.
+  summary: >-
+    Whisper transcribes, a DeepSeek agent pipeline writes the captions and on-screen design, and
+    FFmpeg renders a finished reel — in English, Hindi or Hinglish.
+  stack: [faster-whisper, DeepSeek, FastAPI, Pillow, FFmpeg]
+
+- name: Kairo
+  url: https://github.com/imrrohitt/Kairo-Recommendations-Simplified
+  kind: Open source · Recommender systems
+  tagline: Build recommendation systems, not recommendation pipelines.
+  summary: >-
+    Candidate generation, features, XGBoost ranking and evaluation in one guided platform —
+    every dataset, model and deployment versioned, served through one clean API.
+  stack: [FastAPI, React, XGBoost, SQLAlchemy, Pandas]
+
+# Smaller repos listed under "More on GitHub" on the projects page.
+more:
+  - { name: SecureLLM, url: "https://github.com/imrrohitt/SecureLLM", lang: TypeScript, text: "Security assessment and defence platform for self-hosted LLMs and AI agents." }
+  - { name: ForgeAPI, url: "https://github.com/imrrohitt/ForgeAPI", lang: Python, text: "A Rails-inspired, convention-over-configuration layer for FastAPI — generators, migrations, background jobs." }
+  - { name: rails_ai_kit, url: "https://github.com/imrrohitt/rails_ai_kit", lang: Ruby, text: "A Rails gem for vector classification, embeddings and similarity search on pgvector." }
+  - { name: TinyGPT, url: "https://github.com/imrrohitt/TinyGPT", lang: Python, text: "A ~1M-parameter autoregressive language model built from scratch in JAX." }
+  - { name: Mimicra, url: "https://github.com/imrrohitt/Mimicra", lang: Python, text: "Personalised talking-head training from a short video." }
+  - { name: AutoPM, url: "https://github.com/imrrohitt/AutoPM", lang: Python, text: "An AI-native autonomous project manager for context-aware software execution workflows." }

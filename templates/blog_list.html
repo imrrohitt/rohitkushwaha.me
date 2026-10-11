@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "_macros.html" import writing_rows, featured_article as feature, page_head %}
+{% block title %}Writing — {{ site.name }}{% endblock %}
+{% block description %}Articles by {{ site.name }} on AI, LLM inference, backend systems and cloud.{% endblock %}
+
+{% block content %}
+{{ page_head("Writing", "Notes from <em>the field</em>", "Articles on AI, LLM inference, backend systems and cloud — most of them published on <a href=\"" ~ site.medium ~ "\" target=\"_blank\" rel=\"noopener\">Medium</a>. Subscribe via <a href=\"/feed.xml\">RSS</a>.") }}
+
+<div class="wrap">
+  {% if featured_article %}
+  <div class="writing-feature">{{ feature(featured_article) }}</div>
+  {% endif %}
+  {% for year, items in writing | groupby("date.year") | reverse %}
+  <section class="year-group">
+    <h2 class="year-label" data-reveal>{{ year }}</h2>
+    {{ writing_rows(items) }}
+  </section>
+  {% else %}
+  <p class="empty">Nothing here yet — the first post is on its way.</p>
+  {% endfor %}
+</div>
+{% endblock %}

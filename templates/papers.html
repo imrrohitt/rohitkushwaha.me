@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% from "_macros.html" import media_rows, page_head %}
+{% block title %}Papershelf — {{ site.name }}{% endblock %}
+{% block description %}Research papers {{ site.name }} has read, with one-line takeaways.{% endblock %}
+
+{% block content %}
+{{ page_head("Papershelf", "Papers I've <em>read</em>", "Research papers that shaped how I build — each with the one idea I took away from it.") }}
+<div class="wrap">
+  <div class="card duo-card solo" data-reveal>{{ media_rows(papers, "paper") }}</div>
+</div>
+{% endblock %}

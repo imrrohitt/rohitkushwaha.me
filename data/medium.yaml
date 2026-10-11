@@ -1,0 +1,110 @@
+# Synced from Medium by generator/sync_medium.py — hand edits to excerpt/topic/featured/hidden are kept.
+- title: 'Your RAG Re-Ranker Might Be Obsolete: This New AI Model Costs $0.042'
+  url: https://medium.com/@imrohitkushwaha2001/your-rag-re-ranker-might-be-obsolete-this-new-ai-model-costs-0-042-c732133892ec
+  date: 2026-09-23
+  excerpt: A company swapped out its production re-ranker for it — precision jumped from 34.8% to 46.4%. How Jev works, how
+    to plug it into your RAG pipeline, and the one mistake to avoid.
+  topic: AI
+  tags:
+  - machine-learning
+  - artificial-intelligence
+  - llm
+  reading_time: 8
+- title: 'OpenDynamicGGUF: An Open, Measured, Reproducible Optimizer for Per-Tensor GGUF Quantization'
+  url: https://medium.com/@imrohitkushwaha2001/opendynamicgguf-an-open-measured-reproducible-optimizer-for-per-tensor-gguf-quantization-6ca130764ee4
+  date: 2026-09-12
+  excerpt: Why uniform Q4_K_M is leaving quality on the table — and how an open 15-step pipeline picks the right bits for
+    every tensor, under your hardware budget.
+  topic: AI
+  tags:
+  - artificial-intelligence
+  - llm
+  - machine-learning
+  - llm-quantization
+  reading_time: 35
+  featured: true
+- title: 'Stop Writing Nested Try/Except Hell: The AWS Service That Replaces Your Entire Workflow Engine'
+  url: https://medium.com/@imrohitkushwaha2001/stop-writing-nested-try-except-hell-the-aws-service-that-replaces-your-entire-workflow-engine-c992834fdabb
+  date: 2026-09-05
+  excerpt: If your Lambda functions call other Lambda functions wrapped in retry logic wrapped in more retry logic, you're
+    solving a problem AWS already solved for you.
+  topic: Cloud
+  tags:
+  - cloud
+  - aws
+  - aws-lambda
+  reading_time: 6
+- title: 'The Data Paradox No One Talks About: Why AI Companies Are Secretly Building Fake Enterprises to Train Real Models'
+  url: https://medium.com/@imrohitkushwaha2001/the-data-paradox-no-one-talks-about-why-ai-companies-are-secretly-building-fake-enterprises-to-b1330320f19b
+  date: 2026-09-04
+  excerpt: You need sensitive data to train a system that detects sensitive data — but you're legally forbidden from using
+    it. Here's the workaround nobody's talking about.
+  topic: AI
+  tags:
+  - machine-learning
+  - generative-ai-use-cases
+  - artificial-intelligence
+  reading_time: 10
+- title: Airbnb Changed Login Completely — The Server Now Decides How You Authenticate
+  url: https://medium.com/@imrohitkushwaha2001/airbnb-changed-login-completely-the-server-now-decides-how-you-authenticate-6375f903476c
+  date: 2026-08-30
+  excerpt: How Airbnb's engineering team scrapped hardcoded login logic, moved the brain to the server, and cut client code
+    by 60% in the process.
+  topic: Engineering
+  tags:
+  - distributed-systems
+  - software-engineering
+  - system-design-interview
+  reading_time: 4
+- title: 'Spot Instances: The Secret to Cutting Cloud Costs by Up to 90% (And Why Every Modern Team Should Care)'
+  url: https://medium.com/@imrohitkushwaha2001/spot-instances-the-secret-to-cutting-cloud-costs-by-up-to-90-and-why-every-modern-team-should-c2a8f1b90e6e
+  date: 2026-08-25
+  excerpt: Cloud computing changed how we build and scale applications — and introduced runaway costs. How Spot capacity cuts
+    the bill by up to 90%, and how to use it safely.
+  topic: Cloud
+  tags:
+  - artificial-intelligence
+  - cloud-computing
+  - gcp
+  - aws
+  reading_time: 5
+- title: I Tried Meta’s “Segment Anything Model”— And Now I Can’t Look at Photos the Same Way
+  url: https://medium.com/@imrohitkushwaha2001/i-tried-metas-segment-anything-model-and-now-i-can-t-look-at-photos-the-same-way-2e2763904a41
+  date: 2026-08-23
+  excerpt: The AI tool that turns any image into perfectly cut-out objects with one click — and why designers, doctors and
+    self-driving engineers are obsessed with it.
+  topic: AI
+  tags:
+  - ai
+  - artificial-intelligence
+  - machine-learning
+  reading_time: 3
+- title: Why Your Database Wasn’t Built for AI Agents (And How to Fix It)
+  url: https://medium.com/@imrohitkushwaha2001/why-your-database-wasnt-built-for-ai-agents-and-how-to-fix-it-46b8a7418583
+  date: 2026-08-06
+  excerpt: A practical guide to redesigning database architecture for the agentic era.
+  topic: AI
+  tags:
+  - ai
+  - artificial-intelligence
+  reading_time: 9
+- title: 'OpenDynamicGGUF: An Open-Source Answer to Unsloth’s “Dynamic” GGUF Quantization'
+  url: https://medium.com/@imrohitkushwaha2001/opendynamicgguf-an-open-source-answer-to-unsloths-dynamic-gguf-quantization-b35342933ef0
+  date: 2026-07-26
+  excerpt: How a new alpha-stage project makes mixed-precision LLM quantization transparent, reproducible and measurable.
+  topic: AI
+  tags:
+  - machine-learning
+  - artificial-intelligence
+  - model-quantization
+  reading_time: 9
+- title: LLM Quantization
+  url: https://medium.com/@imrohitkushwaha2001/llm-quantization-07d9f7a0e093
+  date: 2026-07-15
+  excerpt: The optimisation that put Llama 3, Qwen, DeepSeek and Mistral on consumer GPUs and laptops — what quantization
+    is, and what names like Q4_K_M actually mean.
+  topic: AI
+  tags:
+  - machine-learning
+  - artificial-intelligence
+  reading_time: 8

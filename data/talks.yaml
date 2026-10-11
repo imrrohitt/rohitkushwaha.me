@@ -1,0 +1,38 @@
+# date: YYYY-MM-DD, YYYY-MM or just YYYY. image, link, slides, video, topics are optional.
+
+- title: Why AI Matters for Your Career
+  event: Alumni Talk Session
+  venue: Kanpur Institute of Technology, Kanpur
+  date: 2026-09-14
+  role: Alumni speaker
+  audience: KIT students
+  image: /static/images/talk-kit-2026.jpg
+  image_position: 50% 42%
+  image_alt: Rohit speaking on stage at the Alumni Talk Session, with the session poster projected behind him
+  summary: >-
+    Back at my own college, as an alumnus of the 2021–23 MCA batch, to talk about where AI is
+    really used in industry today and how students can build a career around it.
+  topics:
+    - How AI shows up in real products — beyond the demos
+    - "The skills that compound — fundamentals, systems and shipping"
+    - Building real projects instead of collecting certificates
+    - Open Q&A on careers in AI and software engineering
+
+- title: Building Intelligent AI Agents with Google ADK
+  event: Google I/O Extended Kanpur · GDG Kanpur
+  venue: Chhatrapati Shahu Ji Maharaj University, Kanpur
+  date: 2025-08-23
+  role: Speaker
+  audience: 3,000+ developers
+  image: /static/images/talk-gdg-io-extended-2025.jpg
+  image_position: 50% 50%
+  image_alt: Google I/O Extended Kanpur speaker card for Rohit Kushwaha's talk on building intelligent AI agents with Google ADK
+  link: https://www.linkedin.com/posts/googleioextended-gdgkanpur-codevidya-share-7364261306574520321-fJi2/
+  summary: >-
+    A session at Google I/O Extended Kanpur on building intelligent chatbots and AI agents with
+    Generative AI — from first prototype to an assistant that holds up in production.
+  topics:
+    - Agent architecture with Google's Agent Development Kit
+    - Tools, memory and multi-agent orchestration
+    - RAG architectures with LangChain and LlamaIndex
+    - Taking LLM-powered assistants to production

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_head %}
+{% block title %}Page not found — {{ site.name }}{% endblock %}
+
+{% block content %}
+{{ page_head("404", "This page <em>wandered off.</em>", "The link may be old, or I may have moved things around. Try the <a href=\"/\">home page</a> or the <a href=\"/blogs/\">writing archive</a>.") }}
+{% endblock %}

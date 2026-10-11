@@ -1,0 +1,198 @@
+{% from "_icons.html" import icon %}
+
+{% macro section_head(num, label, title, href=None, link_label="View all") %}
+<div class="section-head" data-reveal>
+  <div>
+    <p class="eyebrow"><span class="eyebrow-num">{{ num }}</span> {{ label }}</p>
+    <h2 class="section-title">{{ title | safe }}</h2>
+  </div>
+  {% if href %}<a class="link-arrow" href="{{ href }}">{{ link_label }} {{ icon("arrow-right", 15) }}</a>{% endif %}
+</div>
+{% endmacro %}
+
+{% macro ext(url) %}{% if url %} href="{{ url }}" target="_blank" rel="noopener"{% endif %}{% endmacro %}
+
+{# Social links that expand to show their label on hover. #}
+{% macro socials(links, cls="") %}
+<ul class="socials {{ cls }}">
+  {% for link in links %}
+  <li>
+    <a class="social" href="{{ link.url }}"{% if link.icon != "mail" %} target="_blank" rel="me noopener"{% endif %} aria-label="{{ link.label }}">
+      {{ icon(link.icon, 18) }}<span class="social-label">{{ link.label }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{# Editorial list of writing — local posts and Medium articles. #}
+{% macro writing_rows(items, show_topic=True, brief=False) %}
+<ul class="list{% if brief %} list-brief{% endif %}" data-reveal>
+  {% for w in items %}
+  <li>
+    <a class="list-row"{% if w.external %} href="{{ w.url }}" target="_blank" rel="noopener"{% else %} href="{{ w.url }}"{% endif %}>
+      <time datetime="{{ w.date.isoformat() }}">{{ w.date | date }}</time>
+      <span class="list-body">
+        <span class="list-title">{{ w.title }}{% if w.draft %} <span class="chip">draft</span>{% endif %}</span>
+        {% if w.description and not brief %}<span class="list-meta">{{ w.description }}</span>{% endif %}
+        <span class="list-tags">
+          {% if show_topic %}<span class="chip">{{ w.topic }}</span>{% endif %}
+          <span class="list-src">{% if w.external %}{{ icon("medium", 13) }} {{ w.source }}{% else %}{{ w.source }}{% endif %} · {{ w.reading_time }} min read</span>
+        </span>
+      </span>
+      <span class="list-arrow">{{ icon("arrow-up-right" if w.external else "arrow-right", 18) }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro featured_article(w) %}
+<a class="card feature-article" href="{{ w.url }}"{% if w.external %} target="_blank" rel="noopener"{% endif %} data-reveal>
+  <span class="fa-glow" aria-hidden="true"></span>
+  <span class="fa-top">
+    <span class="chip chip-accent">Featured</span>
+    <span class="chip">{{ w.topic }}</span>
+    <span class="card-arrow">{{ icon("arrow-up-right", 18) }}</span>
+  </span>
+  <span class="fa-title">{{ w.title }}</span>
+  <span class="fa-excerpt">{{ w.description }}</span>
+  <span class="fa-meta">{% if w.external %}{{ icon("medium", 14) }}{% endif %} {{ w.source }} · {{ w.date | date("%B %d, %Y") }} · {{ w.reading_time }} min read</span>
+</a>
+{% endmacro %}
+
+{# Terminal-style code block; comments after `#` are dimmed. #}
+{% macro terminal(snippet, title="terminal") %}
+<div class="terminal">
+  <div class="terminal-bar"><span></span><span></span><span></span><p>{{ title }}</p></div>
+  <pre><code>{% for line in snippet.rstrip().split("\n") %}{% if line.startswith("$") %}<span class="t-prompt">$</span>{{ line[1:] }}{% elif "#" in line %}{% set parts = line.split("#", 1) %}{{ parts[0] | replace("->", "→") }}<span class="t-comment">#{{ parts[1] }}</span>{% else %}{{ line | replace("->", "→") }}{% endif %}{{ "\n" if not loop.last }}{% endfor %}</code></pre>
+</div>
+{% endmacro %}
+
+{% macro case_study(p) %}
+<article class="card case" data-reveal>
+  <div class="case-main">
+    <p class="eyebrow">{{ p.kind }}</p>
+    <h3 class="case-title">{{ p.name }}</h3>
+    <p class="case-tagline">{{ p.tagline }}</p>
+    <p class="case-summary">{{ p.summary }}</p>
+    <ul class="case-points">
+      {% for h in p.highlights %}<li>{{ icon("check", 16) }}<span>{{ h | md }}</span></li>{% endfor %}
+    </ul>
+    <div class="case-actions">
+      <a class="btn btn-primary" href="{{ p.url }}" target="_blank" rel="noopener">{{ icon("github", 17) }} View on GitHub</a>
+      {% if p.article %}<a class="link-arrow" href="{{ p.article }}" target="_blank" rel="noopener">Read the deep dive {{ icon("arrow-up-right", 15) }}</a>{% endif %}
+    </div>
+  </div>
+  <div class="case-side">
+    {% if p.snippet %}
+    {{ terminal(p.snippet, "odg — recipe.yaml") }}
+    {% elif p.flow %}
+    <div class="flow">
+      <p class="flow-title">Hiring flow</p>
+      <ol>
+        {% for step in p.flow %}<li><span class="flow-n">{{ "%02d" | format(loop.index) }}</span>{{ step }}</li>{% endfor %}
+      </ol>
+    </div>
+    {% endif %}
+    <dl class="case-meta">
+      {% for k, v in p.meta.items() %}<div><dt>{{ k | capitalize }}</dt><dd>{{ v }}</dd></div>{% endfor %}
+    </dl>
+    <ul class="chips">{% for s in p.stack %}<li class="chip">{{ s }}</li>{% endfor %}</ul>
+  </div>
+</article>
+{% endmacro %}
+
+{% macro project_cards(projects) %}
+<div class="project-grid">
+  {% for p in projects %}
+  <a class="card project-card" data-reveal style="--d: {{ (loop.index0 % 2) * 80 }}ms" href="{{ p.url }}" target="_blank" rel="noopener">
+    <div class="project-top">
+      <span class="eyebrow">{{ p.kind }}</span>
+      <span class="card-arrow">{{ icon("arrow-up-right", 18) }}</span>
+    </div>
+    <h3>{{ p.name }}</h3>
+    <p class="project-tagline">{{ p.tagline }}</p>
+    <p class="project-summary">{{ p.summary }}</p>
+    {% if p.highlights %}
+    <ul class="case-points small">
+      {% for h in p.highlights %}<li>{{ icon("check", 15) }}<span>{{ h | md }}</span></li>{% endfor %}
+    </ul>
+    {% endif %}
+    <ul class="chips">{% for s in p.stack %}<li class="chip">{{ s }}</li>{% endfor %}</ul>
+  </a>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro talk_cards(talks, detailed=False) %}
+<div class="talk-grid{% if detailed %} is-detailed{% endif %}">
+  {% for t in talks %}
+  <article class="card talk-card" data-reveal style="--d: {{ (loop.index0 % 2) * 80 }}ms">
+    {% if t.image %}
+    <div class="talk-media">
+      <img src="{{ t.image }}" alt="{{ t.image_alt }}" loading="lazy" style="object-position: {{ t.image_position or '50% 50%' }}">
+    </div>
+    {% endif %}
+    <div class="talk-body">
+      <p class="eyebrow">{{ t.date | date("%b %Y") }} <span class="eyebrow-dot" aria-hidden="true"></span> {{ t.event }}</p>
+      <h3 class="talk-title">{{ t.title }}</h3>
+      <p class="talk-where">{{ icon("map-pin", 14) }} {{ t.venue }}</p>
+      <p class="talk-summary">{{ t.summary }}</p>
+      {% if detailed %}
+      <dl class="talk-facts">
+        <div><dt>Date</dt><dd>{{ t.date | date("%b %d, %Y") }}</dd></div>
+        {% if t.role %}<div><dt>Role</dt><dd>{{ t.role }}</dd></div>{% endif %}
+        {% if t.audience %}<div><dt>Audience</dt><dd>{{ t.audience }}</dd></div>{% endif %}
+      </dl>
+      {% if t.topics %}
+      <p class="talk-covered">What I covered</p>
+      <ul class="talk-topics">
+        {% for topic in t.topics %}<li>{{ topic }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% endif %}
+      {% if (t.audience and not detailed) or t.link or t.slides or t.video %}
+      <div class="talk-foot">
+        {% if t.audience and not detailed %}<span class="chip">{{ icon("users", 13) }} {{ t.audience }}</span>{% endif %}
+        {% if t.link %}<a class="link-arrow" href="{{ t.link }}" target="_blank" rel="noopener">Event post {{ icon("arrow-up-right", 14) }}</a>{% endif %}
+        {% if t.slides %}<a class="link-arrow" href="{{ t.slides }}" target="_blank" rel="noopener">Slides {{ icon("arrow-up-right", 14) }}</a>{% endif %}
+        {% if t.video %}<a class="link-arrow" href="{{ t.video }}" target="_blank" rel="noopener">Recording {{ icon("arrow-up-right", 14) }}</a>{% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{# Compact rows for videos / papers. #}
+{% macro media_rows(items, kind, brief=False) %}
+<ul class="list list-compact">
+  {% for v in items %}
+  <li>
+    <a class="list-row"{{ ext(v.url) }}>
+      <span class="list-body">
+        <span class="list-title">{{ v.title }}</span>
+        <span class="list-meta">
+          {% if kind == "paper" %}{{ v.authors }}, {{ v.year }}{% else %}{{ v.channel }}{% endif %}{% if v.note and not brief %} — {{ v.note }}{% endif %}
+        </span>
+      </span>
+      <time>{{ v.date | date }}</time>
+      <span class="list-arrow">{{ icon("arrow-up-right", 16) }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro page_head(label, title, lede) %}
+<header class="page-head">
+  <div class="page-head-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow rise"><span class="eyebrow-num">/</span> {{ label }}</p>
+    <h1 class="page-title rise" style="--d: 80ms">{{ title | safe }}</h1>
+    <p class="page-lede rise" style="--d: 160ms">{{ lede | safe }}</p>
+  </div>
+</header>
+{% endmacro %}

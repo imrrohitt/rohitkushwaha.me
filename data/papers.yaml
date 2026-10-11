@@ -1,0 +1,65 @@
+# Papers I've read. SAMPLE ENTRIES — replace/extend with your own.
+# date = when you read it (YYYY-MM). note = one-line takeaway.
+
+- title: "Dynamo: Amazon's Highly Available Key-value Store"
+  authors: DeCandia et al.
+  year: 2007
+  url: https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
+  date: 2026-10
+  note: Consistent hashing, vector clocks and sloppy quorums — the blueprint for always-on storage.
+
+- title: "In Search of an Understandable Consensus Algorithm (Raft)"
+  authors: Ongaro & Ousterhout
+  year: 2014
+  url: https://raft.github.io/raft.pdf
+  date: 2026-09
+  note: Leader election and log replication you can actually reason about.
+
+- title: Attention Is All You Need
+  authors: Vaswani et al.
+  year: 2017
+  url: https://arxiv.org/abs/1706.03762
+  date: 2026-09
+  note: The transformer. Worth re-reading every year.
+
+- title: Efficient Memory Management for LLM Serving with PagedAttention
+  authors: Kwon et al.
+  year: 2023
+  url: https://arxiv.org/abs/2309.06180
+  date: 2026-08
+  note: The idea behind vLLM — treat the KV cache like virtual memory.
+
+- title: "QLoRA: Efficient Finetuning of Quantized LLMs"
+  authors: Dettmers et al.
+  year: 2023
+  url: https://arxiv.org/abs/2305.14314
+  date: 2026-07
+  note: 4-bit NF4 base weights + LoRA adapters; fine-tuning on a single GPU.
+
+- title: "LoRA: Low-Rank Adaptation of Large Language Models"
+  authors: Hu et al.
+  year: 2021
+  url: https://arxiv.org/abs/2106.09685
+  date: 2026-06
+  note: Fine-tuning by learning a small low-rank update instead of the full matrix.
+
+- title: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+  authors: Lewis et al.
+  year: 2020
+  url: https://arxiv.org/abs/2005.11401
+  date: 2026-05
+  note: Where the term RAG comes from.
+
+- title: "ReAct: Synergizing Reasoning and Acting in Language Models"
+  authors: Yao et al.
+  year: 2022
+  url: https://arxiv.org/abs/2210.03629
+  date: 2026-04
+  note: Interleave thoughts and tool calls — the pattern under most agents today.
+
+- title: "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines"
+  authors: Khattab et al.
+  year: 2023
+  url: https://arxiv.org/abs/2310.03714
+  date: 2026-03
+  note: Treat prompts as parameters you optimise against a metric.

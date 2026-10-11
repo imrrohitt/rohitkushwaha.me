@@ -1,0 +1,102 @@
+# Profile and site-wide settings. Short Markdown (links, **bold**) works in intro/bio lines.
+
+name: Rohit Kushwaha
+short_name: Rohit
+role: Senior AI Engineer
+previous_role: Ex-Tech Lead
+company: Academian Inc.
+location: Pune, India
+url: https://rohitkushwaha.netlify.app   # change once your custom domain is live
+medium: https://medium.com/@imrohitkushwaha2001
+github: https://github.com/imrrohitt
+description: >-
+  Rohit Kushwaha is a Senior AI Engineer and former Tech Lead in Pune who builds software
+  products end to end — interfaces, distributed backends, AI and infrastructure.
+
+tagline: I build software products end to end — and the systems that keep them fast and reliable.
+
+# Shown in the home-page hero — keep it to two or three lines.
+intro: >-
+  I build software products **end to end** — the interface, the distributed backend, the AI
+  inside it and the infrastructure it runs on. A former Tech Lead who turns business problems
+  into systems that ship.
+
+# About page.
+about_lede: >-
+  I started as a full-stack developer and grew into building large systems — the kind with real
+  money and real users behind them. Today I build AI-powered products end to end, from the first
+  conversation about the business problem to the infrastructure that keeps them running.
+
+story:
+  - period: Where it started
+    title: Full-stack, from the database up
+    text: >-
+      I learned by shipping whole web products on my own in Ruby on Rails and React — owning
+      everything from the schema to the last pixel.
+  - period: Real users, real stakes
+    title: Platforms that couldn't go down
+    text: >-
+      Then came products where payments, concurrency and uptime weren't optional. Systems I've
+      worked on have served **150,000+ users** and processed **$3.5M+ in payments a month**.
+  - period: 2023 – 2026 · W3villa
+    title: Leading whole products
+    text: >-
+      As Tech Lead I owned full-stack products for enterprise clients — shaping what we built
+      with them, making the architecture calls and leading the team that delivered it.
+  - period: 2026 – now · Academian
+    title: Systems at serious scale
+    text: >-
+      Today I build the platforms AI products stand on — distributed vector search, model
+      serving and multilingual pipelines running in production.
+
+links:
+  - { label: GitHub, icon: github, url: "https://github.com/imrrohitt" }
+  - { label: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/rohit-kushwaha-6915b7197/" }
+  - { label: Medium, icon: medium, url: "https://medium.com/@imrohitkushwaha2001" }
+  - { label: Instagram, icon: instagram, url: "https://www.instagram.com/rohit_k_idea/" }
+  - { label: Email, icon: mail, url: "mailto:imrohitkushwaha2001@gmail.com" }
+
+email: imrohitkushwaha2001@gmail.com
+
+# "At a glance" boxes under the hero.
+glance:
+  - { label: Currently, title: Senior AI Engineer, text: "Search and model-serving platforms in production.", href: /about/ }
+  - { label: Previously, title: Tech Lead, text: "Owned full-stack products, clients and the team.", href: /about/ }
+  - { label: Speaking, title: Google I/O Extended Kanpur, text: "AI agents with Google ADK, for 3,000+ developers.", href: /talks/ }
+  - { label: Open source, title: OpenDynamicGGUF & Niyam, text: "An LLM quantisation optimiser and a hiring platform.", href: /projects/ }
+
+# "What I do" — one short line each.
+focus:
+  - { title: Products end to end, text: "From the business problem to a launched, paying product." }
+  - { title: Distributed backends, text: "Services, event streams and caching built for real load." }
+  - { title: AI in production, text: "Agents, retrieval and fine-tuned models that actually ship." }
+  - { title: Speed & cost, text: "Faster systems and smaller bills — by measuring first." }
+  - { title: Cloud & reliability, text: "Automated infrastructure and zero-downtime releases." }
+  - { title: Leadership, text: "Clients, roadmaps, architecture calls and growing the team." }
+
+skills:
+  - { group: "AI & Generative AI", items: "GPT-4o, Claude, Gemini, Llama 3, Gemma, DeepSeek, Mistral · LoRA, QLoRA, PEFT, RLHF, SFT · HuggingFace, PyTorch" }
+  - { group: "Agentic AI", items: "LangGraph, LangChain, CrewAI, AutoGen, Google ADK, MCP, A2A, Semantic Kernel, ReAct, tool calling" }
+  - { group: "RAG & Retrieval", items: "LlamaIndex, Qdrant, FAISS, Weaviate, pgvector, Neo4j, HNSW, BM25, hybrid search, Cohere Rerank" }
+  - { group: "Inference & Serving", items: "vLLM, SGLang, TensorRT-LLM, llama.cpp, Ollama, Triton, Ray Serve, ONNX, CUDA, GGUF, INT8/INT4" }
+  - { group: "Backend & Data", items: "FastAPI, Ruby on Rails, Node.js, PostgreSQL, Redis, Elasticsearch, Celery, Kafka, Spark, Airflow, REST, GraphQL" }
+  - { group: "Frontend", items: "React, Next.js, TypeScript, Tailwind CSS, Vite" }
+  - { group: "Cloud & DevOps", items: "AWS (Bedrock, SageMaker, EKS, ECS, Lambda, Fargate), Terraform, Docker, Kubernetes, Helm, GitHub Actions, ArgoCD" }
+  - { group: "Classical ML", items: "XGBoost, LightGBM, scikit-learn, Pandas, NumPy, Isolation Forest, LSTM, drift detection" }
+  - { group: "LLMOps & Observability", items: "LangSmith, Arize Phoenix, W&B, DSPy, ragas, DeepEval, Prometheus, Grafana, OpenTelemetry" }
+  - { group: "AI Security & Governance", items: "Guardrails, OWASP LLM Top 10, prompt-injection defence, PII redaction, RBAC, SOC 2, GDPR" }
+  - { group: "Languages", items: "Python, TypeScript, JavaScript, Ruby, C++, Bash, SQL" }
+
+education:
+  - degree: Master of Computer Applications (MCA)
+    school: Kanpur Institute of Technology, Kanpur
+    period: 2021 – 2023
+    note: CGPA 8.75 / 10
+
+awards:
+  - year: "2025"
+    title: Speaker, Google I/O Extended Kanpur (GDG Kanpur)
+    text: Spoke to 3,000+ developers about building intelligent AI agents and chatbots with Generative AI and Google ADK.
+  - year: "2024"
+    title: "National Rank #2, Nextlevel Backend Developer Challenge (Unacademy)"
+    text: Placed 2nd among 5,000+ participants, recognised for API design and system architecture.

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% from "_macros.html" import media_rows, page_head %}
+{% block title %}Videos — {{ site.name }}{% endblock %}
+{% block description %}Videos {{ site.name }} has watched and recommends.{% endblock %}
+
+{% block content %}
+{{ page_head("Videos", "Worth <em>watching</em>", "Talks, lectures and deep dives I've watched recently — and keep recommending to people.") }}
+<div class="wrap">
+  <div class="card duo-card solo" data-reveal>{{ media_rows(videos, "video") }}</div>
+</div>
+{% endblock %}

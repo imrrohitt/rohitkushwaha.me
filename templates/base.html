@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.name }} — {{ site.role }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+  <meta name="author" content="{{ site.name }}">
+  <link rel="canonical" href="{{ base_url }}{{ path }}">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:description" content="{{ self.description() }}">
+  <meta property="og:url" content="{{ base_url }}{{ path }}">
+  <meta property="og:image" content="{{ base_url }}/static/images/rohit.webp">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c0c0b" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/static/images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/static/images/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.className = d.className.replace("no-js", "js");
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      d.dataset.theme = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="/static/css/style.css?v={{ build_id }}">
+</head>
+{% from "_icons.html" import icon %}
+{% from "_macros.html" import socials %}
+<body class="{% block body_class %}{% endblock %}">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="{{ site.name }}, home">
+        <img class="brand-mark" src="/static/images/favicon-192.png" alt="" width="32" height="32">
+        <span class="brand-name">{{ site.name }}</span>
+      </a>
+
+      <nav id="site-nav" class="nav" aria-label="Primary">
+        {% for key, label, href in [
+            ("blogs", "Writing", "/blogs/"),
+            ("projects", "Projects", "/projects/"),
+            ("talks", "Talks", "/talks/"),
+            ("videos", "Videos", "/videos/"),
+            ("papers", "Papershelf", "/papers/"),
+            ("about", "About", "/about/")] %}
+        <a href="{{ href }}"{% if active == key %} aria-current="page"{% endif %}>{{ label }}</a>
+        {% endfor %}
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+          {{ icon("moon", 17, "i-moon") }}{{ icon("sun", 17, "i-sun") }}
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+          {{ icon("menu", 18) }}
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <section class="cta" data-reveal>
+        <p class="eyebrow"><span class="eyebrow-num">→</span> Get in touch</p>
+        <h2 class="cta-title">Let's build something <em>that ships.</em></h2>
+        <p class="cta-text">Open to conversations about AI products, SaaS platforms and backend systems — and to speaking at colleges and meetups.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary btn-lg" href="mailto:{{ site.email }}">{{ icon("mail", 17) }} {{ site.email }}</a>
+          {{ socials(site.links | rejectattr("icon", "equalto", "mail") | list) }}
+        </div>
+      </section>
+
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="/"><img class="brand-mark" src="/static/images/favicon-192.png" alt="" width="32" height="32"><span class="brand-name">{{ site.name }}</span></a>
+          <p>{{ site.role }} · {{ site.previous_role }}, {{ site.location }}. Building AI products end to end — models, backends, frontends and infrastructure.</p>
+        </div>
+        <div>
+          <h2>Read</h2>
+          <ul>
+            <li><a href="/blogs/">Writing</a></li>
+            <li><a href="/papers/">Papershelf</a></li>
+            <li><a href="/videos/">Videos</a></li>
+            <li><a href="/feed.xml">RSS feed</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Work</h2>
+          <ul>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/talks/">Talks</a></li>
+            <li><a href="/about/">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Elsewhere</h2>
+          <ul>
+            {% for link in site.links %}
+            <li><a href="{{ link.url }}"{% if link.icon != "mail" %} rel="me noopener" target="_blank"{% endif %}>{{ link.label }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© {{ year }} {{ site.name }}</p>
+        <p class="footer-time">{{ icon("map-pin", 14) }} {{ site.location }} · <span data-clock>IST</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/js/main.js?v={{ build_id }}" defer></script>
+</body>
+</html>

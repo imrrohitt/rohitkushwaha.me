@@ -1,0 +1,58 @@
+# Videos worth watching. date = when you watched it (YYYY-MM).
+# topic is one of AI / Engineering / Fundamentals.
+
+- title: "Jev by TypeSafe AI — What is a System-1 Decision Model"
+  channel: CampusX
+  url: https://www.youtube.com/watch?v=0zFfcEr1e9U
+  date: 2026-10
+  topic: AI
+  note: TypeSafe's Jev returns typed decisions instead of text — a new category next to LLMs.
+
+- title: "Did OpenAI just clone Jev? Everything you missed from OpenAI DevDay"
+  channel: Tech Unfiltered
+  url: https://www.youtube.com/watch?v=-OoQFrkz0RE
+  date: 2026-10
+  topic: AI
+  note: OpenAI's new Decisions API — fast, structured choices without hallucination.
+
+- title: "Anthropic IPO, OpenAI DevDay Recap, And Why Are Decision Models Everywhere?"
+  channel: Mastra
+  url: https://www.youtube.com/watch?v=4mvgHJj9l7s
+  date: 2026-10
+  topic: AI
+  note: How decision models became an industry category in three weeks.
+
+- title: "Kafka System Design Deep Dive w/ a Ex-Meta Staff Engineer"
+  channel: Hello Interview
+  url: https://www.youtube.com/watch?v=DU8o-OTeoCc
+  date: 2026-09
+  topic: Engineering
+  note: Partitions, consumer groups and ordering — when Kafka is the right tool.
+
+- title: "Redis Deep Dive w/ a Ex-Meta Senior Manager"
+  channel: Hello Interview
+  url: https://www.youtube.com/watch?v=fmT5nlEkl3U
+  date: 2026-09
+  topic: Engineering
+  note: Caching, rate limiting, leaderboards and the clustering model behind them.
+
+- title: "gRPC — Protocol Buffers (Protobuf) Explained with Practical Examples"
+  channel: Java Techie
+  url: https://www.youtube.com/watch?v=wcY7bvyE4q4
+  date: 2026-08
+  topic: Engineering
+  note: Schema-first contracts between services, and why they beat hand-rolled JSON.
+
+- title: "Let's build GPT: from scratch, in code, spelled out"
+  channel: Andrej Karpathy
+  url: https://www.youtube.com/watch?v=kCc8FmEb1nY
+  date: 2026-07
+  topic: Fundamentals
+  note: Still the clearest walk-through of a transformer, one line of code at a time.
+
+- title: "Transformers, the tech behind LLMs"
+  channel: 3Blue1Brown
+  url: https://www.youtube.com/watch?v=wjZofJX0v4M
+  date: 2026-06
+  topic: Fundamentals
+  note: Beautiful visual intuition for embeddings and attention.

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% from "_icons.html" import icon %}
+{% block title %}{{ post.title }} — {{ site.name }}{% endblock %}
+{% block description %}{{ post.description or post.title }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block body_class %}is-post{% endblock %}
+
+{% block content %}
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+<article class="post">
+  <header class="post-head">
+    <div class="page-head-bg" aria-hidden="true"></div>
+    <div class="wrap post-wrap">
+      <a class="back rise" href="/blogs/">{{ icon("arrow-left", 15) }} All writing</a>
+      {% if post.tags or post.draft %}
+      <ul class="chips rise" style="--d: 40ms">
+        {% for tag in post.tags %}<li class="chip">{{ tag }}</li>{% endfor %}
+        {% if post.draft %}<li class="chip">draft</li>{% endif %}
+      </ul>
+      {% endif %}
+      <h1 class="post-title rise" style="--d: 80ms">{{ post.title }}</h1>
+      {% if post.description %}<p class="post-dek rise" style="--d: 140ms">{{ post.description }}</p>{% endif %}
+      <div class="byline rise" style="--d: 200ms">
+        <img src="/static/images/rohit.webp" alt="" width="40" height="40">
+        <div>
+          <p class="byline-name">{{ site.name }}</p>
+          <p class="byline-meta"><time datetime="{{ post.date.isoformat() }}">{{ post.date | date("%B %d, %Y") }}</time> · {{ post.reading_time }} min read</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap post-wrap">
+    <div class="prose">
+      {{ post.html }}
+    </div>
+
+    <footer class="post-foot">
+      <div class="author-card card">
+        <img src="/static/images/rohit.webp" alt="" width="64" height="64">
+        <div>
+          <p class="byline-name">Written by {{ site.name }}</p>
+          <p class="author-text">{{ site.role }} at {{ site.company }}. If this was useful, say hi on
+            {% for link in site.links if link.label in ("LinkedIn", "Email") %}<a href="{{ link.url }}">{{ link.label }}</a>{% if not loop.last %} or {% endif %}{% endfor %}.</p>
+        </div>
+      </div>
+      <nav class="pager" aria-label="More posts">
+        {% if older %}<a class="card" href="{{ older.url }}"><span class="pager-label">{{ icon("arrow-left", 14) }} Older</span><span class="pager-title">{{ older.title }}</span></a>{% else %}<span></span>{% endif %}
+        {% if newer %}<a class="card next" href="{{ newer.url }}"><span class="pager-label">Newer {{ icon("arrow-right", 14) }}</span><span class="pager-title">{{ newer.title }}</span></a>{% endif %}
+      </nav>
+    </footer>
+  </div>
+</article>
+{% endblock %}

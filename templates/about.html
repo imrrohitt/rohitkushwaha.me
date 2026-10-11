@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% from "_macros.html" import section_head, socials %}
+{% from "_icons.html" import icon %}
+{% block title %}About — {{ site.name }}{% endblock %}
+{% block description %}{{ site.about_lede }}{% endblock %}
+
+{% block content %}
+<header class="page-head about-hero">
+  <div class="page-head-bg" aria-hidden="true"></div>
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow rise"><span class="eyebrow-num">/</span> About</p>
+      <h1 class="page-title rise" style="--d: 80ms">Hi, I'm <em>{{ site.short_name }}.</em></h1>
+      <p class="about-lede rise" style="--d: 160ms">{{ site.about_lede }}</p>
+      <div class="rise" style="--d: 240ms">{{ socials(site.links) }}</div>
+    </div>
+    <figure class="portrait portrait-sm rise" style="--d: 200ms">
+      <div class="portrait-glow" aria-hidden="true"></div>
+      <div class="portrait-frame"><img src="/static/images/rohit.webp" alt="Portrait of {{ site.name }}" width="800" height="800"></div>
+    </figure>
+  </div>
+</header>
+
+<section class="section wrap">
+  {{ section_head("01", "The story", "From full-stack <em>to systems at scale</em>") }}
+  <ol class="story">
+    {% for ch in site.story %}
+    <li class="story-item" data-reveal>
+      <p class="story-period">{{ ch.period }}</p>
+      <div class="story-body">
+        <h3>{{ ch.title }}</h3>
+        <p>{{ ch.text | md }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section wrap">
+  {{ section_head("02", "Experience", "Where I've <em>worked</em>") }}
+  <ol class="timeline timeline-full" data-reveal>
+    {% for job in experience %}
+    <li class="{% if loop.first %}is-current{% endif %}">
+      <div class="timeline-head">
+        <h3>{{ job.role }} <span class="at">at {{ job.company }}</span></h3>
+        <p class="timeline-when">{{ job.period }}</p>
+      </div>
+      <p class="timeline-loc">{{ job.location }}</p>
+      <p class="timeline-text">{{ job.summary }}</p>
+      <ul class="timeline-points">
+        {% for point in job.points %}<li>{{ point }}</li>{% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section wrap">
+  {{ section_head("03", "Toolbox", "What I <em>work with</em>") }}
+  <dl class="skills card" data-reveal>
+    {% for s in site.skills %}
+    <div><dt>{{ s.group }}</dt><dd>{{ s["items"] }}</dd></div>
+    {% endfor %}
+  </dl>
+</section>
+
+<section class="section wrap">
+  {{ section_head("04", "Recognition", "Awards <em>&amp; education</em>") }}
+  <div class="duo">
+    {% for a in site.awards %}
+    <article class="card fact-card" data-reveal style="--d: {{ loop.index0 * 70 }}ms">
+      <p class="eyebrow">{{ a.year }}</p>
+      <h3>{{ a.title }}</h3>
+      <p>{{ a.text }}</p>
+    </article>
+    {% endfor %}
+    {% for e in site.education %}
+    <article class="card fact-card" data-reveal>
+      <p class="eyebrow">{{ e.period }}</p>
+      <h3>{{ e.degree }}</h3>
+      <p>{{ e.school }} · {{ e.note }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

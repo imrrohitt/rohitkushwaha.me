@@ -1,0 +1,24 @@
+- role: Senior AI Engineer
+  company: Academian Inc.
+  location: Pune, India
+  period: Jun 2026 – Present
+  summary: Distributed vector search, model serving and multilingual agent pipelines for enterprise products.
+  points:
+    - Architected a distributed Vector-as-a-Service platform on Amazon EKS managing 20B+ embeddings (HNSW, vector quantisation, EC2 Spot) — 40% lower search latency, 3× indexing throughput, 99.9% availability.
+    - Built a production serving stack with Unsloth dynamic quantisation and SGLang/Triton on SageMaker — 3× inference throughput and 75% smaller memory footprint, with zero-downtime rolling updates.
+    - Designed a multilingual agent pipeline (translate → evaluate → refine → human review) with translation memory and glossary-aware prompting — turnaround from days to minutes, 70% less manual review.
+    - Engineered an evaluation-first platform for large RAG systems using DSPy, ragas and LLM judges with regression datasets and Prometheus/Grafana monitoring.
+
+- role: Tech Lead
+  company: W3villa Technologies
+  location: Noida, India
+  period: Feb 2023 – Jun 2026
+  summary: Owned full-stack products for enterprise clients — HRMS, CRM and LMS — from architecture to delivery and the team.
+  points:
+    - Led full-stack product engineering across Python/FastAPI, Ruby on Rails and React/Next.js — owning architecture, delivery plans, code review and client communication, and mentoring the engineers who shipped it.
+    - Led multi-tenant agent platforms (LangGraph, CrewAI, AutoGen, MCP, A2A) scaling to 120,000+ monthly interactions at 98% intent accuracy and a sub-2s SLA.
+    - Built hybrid semantic search over 1M+ enterprise records — 48% better discoverability and 31% fewer support tickets; on another system, latency fell from 420ms to 273ms with 28% better relevance.
+    - Fine-tuned Gemma / FunctionGemma with LoRA and QLoRA for schema-constrained tool calling — 34% more deterministic tool selection, 41% less hallucination.
+    - Built vLLM / TensorRT serving on EKS and Fargate with INT8/INT4, semantic caching and intelligent routing — 3× throughput, 38% lower overall LLM spend.
+    - Engineered real-time voice pipelines (Whisper.cpp → LLM → ElevenLabs over WebRTC/LiveKit) holding sub-300ms conversational latency.
+    - Set up LLMOps (LangSmith, Arize Phoenix, Prometheus/Grafana) and a version-controlled prompt management system, reducing prompt-related incidents by 60%.

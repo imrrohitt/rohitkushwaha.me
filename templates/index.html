@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% from "_macros.html" import section_head, socials, writing_rows, featured_article as feature, case_study, project_cards, talk_cards, media_rows %}
+{% from "_icons.html" import icon %}
+{% block body_class %}home{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="kicker rise">
+        <span class="kicker-line" aria-hidden="true"></span>
+        {{ site.role }}<span class="kicker-sep" aria-hidden="true"></span>{{ site.previous_role }}
+      </p>
+      <h1 class="hero-title rise" style="--d: 80ms">
+        {{ site.name.split(" ")[0] }} <em>{{ site.name.split(" ")[1:] | join(" ") }}</em>
+      </h1>
+      <p class="hero-intro rise" style="--d: 160ms">{{ site.intro | md }}</p>
+      <div class="hero-actions rise" style="--d: 240ms">
+        <a class="btn btn-primary" href="/projects/">See my work {{ icon("arrow-right", 16) }}</a>
+        <a class="btn btn-ghost" href="/about/">About me</a>
+      </div>
+      <div class="rise" style="--d: 320ms">
+        {{ socials(site.links) }}
+      </div>
+    </div>
+
+    <figure class="portrait rise" style="--d: 200ms">
+      <div class="portrait-glow" aria-hidden="true"></div>
+      <div class="portrait-frame">
+        <img src="/static/images/rohit.webp" alt="Portrait of {{ site.name }}" width="800" height="800" fetchpriority="high">
+      </div>
+      <figcaption class="portrait-tag">{{ icon("map-pin", 13) }} {{ site.location }} · <span data-clock>IST</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap glance" aria-label="At a glance">
+  {% for g in site.glance %}
+  <a class="glance-item" href="{{ g.href }}" data-reveal style="--d: {{ loop.index0 * 70 }}ms">
+    <span class="glance-label">{{ g.label }}</span>
+    <span class="glance-title">{{ g.title }}</span>
+    <span class="glance-text">{{ g.text }}</span>
+  </a>
+  {% endfor %}
+</section>
+
+<section class="section wrap">
+  {{ section_head("01", "What I do", "Idea to production, <em>end to end</em>", "/about/", "More about me") }}
+  <ol class="doing" data-reveal>
+    {% for f in site.focus %}
+    <li>
+      <span class="doing-n">{{ "%02d" | format(loop.index) }}</span>
+      <h3>{{ f.title }}</h3>
+      <p>{{ f.text }}</p>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section wrap">
+  {{ section_head("02", "Open source", "Things I've <em>built</em>", "/projects/", "All projects") }}
+  <div class="case-list">
+    {% for p in projects if p.featured %}{{ case_study(p) }}{% endfor %}
+  </div>
+  {{ project_cards(projects | rejectattr("featured") | list) }}
+</section>
+
+<section class="section wrap">
+  {{ section_head("03", "Experience", "Where I've <em>worked</em>", "/about/", "Full experience") }}
+  <ol class="timeline" data-reveal>
+    {% for job in experience %}
+    <li class="{% if loop.first %}is-current{% endif %}">
+      <div class="timeline-head">
+        <h3>{{ job.role }} <span class="at">at {{ job.company }}</span></h3>
+        <p class="timeline-when">{{ job.period }}</p>
+      </div>
+      <p class="timeline-loc">{{ job.location }}</p>
+      <p class="timeline-text">{{ job.summary }}</p>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section wrap">
+  {{ section_head("04", "Writing", "Recent <em>articles</em>", "/blogs/", "All writing") }}
+  {{ writing_rows((([featured_article] if featured_article else []) + writing[:4]) | sort(attribute="date", reverse=true), show_topic=True, brief=True) }}
+</section>
+
+{% if talks %}
+<section class="section wrap">
+  {{ section_head("05", "Speaking", "On <em>stage</em>", "/talks/", "All talks") }}
+  {{ talk_cards(talks) }}
+</section>
+{% endif %}
+
+<section class="section wrap">
+  {{ section_head("06", "Learning", "Watching <em>&amp; reading</em>") }}
+  <div class="duo">
+    <div class="card duo-card" data-reveal>
+      <div class="duo-head">
+        <h3>Recently watched</h3>
+        <a class="link-arrow" href="/videos/">All {{ icon("arrow-right", 14) }}</a>
+      </div>
+      {{ media_rows(videos[:5], "video", brief=True) }}
+    </div>
+    <div class="card duo-card" data-reveal style="--d: 80ms">
+      <div class="duo-head">
+        <h3>From the papershelf</h3>
+        <a class="link-arrow" href="/papers/">All {{ icon("arrow-right", 14) }}</a>
+      </div>
+      {{ media_rows(papers[:5], "paper", brief=True) }}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
