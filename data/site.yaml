@@ -93,10 +93,47 @@ education:
     period: 2021 – 2023
     note: CGPA 8.75 / 10
 
-awards:
-  - year: "2025"
-    title: Speaker, Google I/O Extended Kanpur (GDG Kanpur)
+# Recognition, milestones and community. Entries with an image get a photo card.
+# `home: true` shows the entry on the home page.
+recognition:
+  - kind: Award
+    when: W3villa Technologies
+    title: Rising Star
+    text: >-
+      Recognised as a Rising Star at W3villa Technologies for pushing what's possible with AI —
+      an intense, rewarding stretch of building and shipping.
+    image: /static/images/w3villa-rising-star.jpg
+    image_position: 50% 22%
+    image_alt: Rohit holding the Rising Star trophy at W3villa Technologies
+    home: true
+  - kind: Education
+    when: "2023"
+    title: Master of Computer Applications — topper
+    text: >-
+      Graduated with a Master of Computer Applications from Kanpur Institute of Technology
+      (CGPA 8.75 / 10), as the topper of the batch.
+    image: /static/images/mca-convocation.jpg
+    image_position: 50% 30%
+    image_alt: Rohit receiving his MCA certificate and medal at the convocation ceremony
+    home: true
+  - kind: Community
+    when: Pune Developers Community
+    title: "Beyond Data Silos: Microsoft Fabric & Azure AI Foundry"
+    text: >-
+      Attended this meetup on how modern enterprises combine unified data platforms with AI
+      services to go from raw data to production-ready AI systems — enterprise AI application
+      development, AI agents and intelligent systems, data and AI integration at scale, and
+      real-world adoption of Microsoft's AI ecosystem. Thanks to Murari Ramuka for the practical
+      insights, and to the Pune tech community for the conversations.
+    image: /static/images/meetup-microsoft-pune.jpg
+    image_position: 50% 24%
+    image_alt: Rohit at the Pune Developers Community meetup on Microsoft Fabric and Azure AI Foundry
+    home: true
+  - kind: Speaking
+    when: "2025"
+    title: Speaker, Google I/O Extended Kanpur
     text: Spoke to 3,000+ developers about building intelligent AI agents and chatbots with Generative AI and Google ADK.
-  - year: "2024"
-    title: "National Rank #2, Nextlevel Backend Developer Challenge (Unacademy)"
-    text: Placed 2nd among 5,000+ participants, recognised for API design and system architecture.
+  - kind: Competition
+    when: "2024"
+    title: "National Rank #2 — Nextlevel Backend Developer Challenge"
+    text: Placed 2nd among 5,000+ participants (Unacademy), recognised for API design and system architecture.

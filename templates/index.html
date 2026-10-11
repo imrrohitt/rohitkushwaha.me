@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import section_head, socials, writing_rows, featured_article as feature, case_study, project_cards, talk_cards, media_rows %}
+{% from "_macros.html" import section_head, socials, writing_rows, featured_article as feature, case_study, project_cards, talk_cards, media_rows, recognition_cards %}
 {% from "_icons.html" import icon %}
 {% block body_class %}home{% endblock %}
 
@@ -95,7 +95,12 @@
 {% endif %}
 
 <section class="section wrap">
-  {{ section_head("06", "Learning", "Watching <em>&amp; reading</em>") }}
+  {{ section_head("06", "Recognition", "Milestones <em>&amp; community</em>", "/about/", "All recognition") }}
+  {{ recognition_cards(site.recognition | selectattr("home") | list) }}
+</section>
+
+<section class="section wrap">
+  {{ section_head("07", "Learning", "Watching <em>&amp; reading</em>") }}
   <div class="duo">
     <div class="card duo-card" data-reveal>
       <div class="duo-head">

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import section_head, socials %}
+{% from "_macros.html" import section_head, socials, recognition_cards %}
 {% from "_icons.html" import icon %}
 {% block title %}About — {{ site.name }}{% endblock %}
 {% block description %}{{ site.about_lede }}{% endblock %}
@@ -65,22 +65,7 @@
 </section>
 
 <section class="section wrap">
-  {{ section_head("04", "Recognition", "Awards <em>&amp; education</em>") }}
-  <div class="duo">
-    {% for a in site.awards %}
-    <article class="card fact-card" data-reveal style="--d: {{ loop.index0 * 70 }}ms">
-      <p class="eyebrow">{{ a.year }}</p>
-      <h3>{{ a.title }}</h3>
-      <p>{{ a.text }}</p>
-    </article>
-    {% endfor %}
-    {% for e in site.education %}
-    <article class="card fact-card" data-reveal>
-      <p class="eyebrow">{{ e.period }}</p>
-      <h3>{{ e.degree }}</h3>
-      <p>{{ e.school }} · {{ e.note }}</p>
-    </article>
-    {% endfor %}
-  </div>
+  {{ section_head("04", "Recognition", "Awards, <em>education &amp; community</em>") }}
+  {{ recognition_cards(site.recognition) }}
 </section>
 {% endblock %}

@@ -196,3 +196,20 @@
   </div>
 </header>
 {% endmacro %}
+
+{% macro recognition_cards(items) %}
+<div class="recog-grid">
+  {% for r in items %}
+  <article class="card recog-card{% if not r.image %} no-media{% endif %}" data-reveal style="--d: {{ (loop.index0 % 3) * 70 }}ms">
+    {% if r.image %}
+    <div class="recog-media"><img src="{{ r.image }}" alt="{{ r.image_alt }}" loading="lazy" style="object-position: {{ r.image_position or '50% 30%' }}"></div>
+    {% endif %}
+    <div class="recog-body">
+      <p class="eyebrow">{{ r.kind }} <span class="eyebrow-dot" aria-hidden="true"></span> {{ r.when }}</p>
+      <h3>{{ r.title }}</h3>
+      <p>{{ r.text }}</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endmacro %}

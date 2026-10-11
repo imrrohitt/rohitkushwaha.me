@@ -294,7 +294,7 @@ a.card:hover .card-arrow { background: var(--ink); border-color: var(--ink); col
   html { scroll-behavior: auto; }
   .rise { animation: none; }
   .js [data-reveal] { opacity: 1; transform: none; transition: none; }
-  .talk-card:hover .talk-media img { transform: none; }
+  .talk-card:hover .talk-media img, .recog-card:hover .recog-media img { transform: none; }
   .talk-card:hover .talk-media img { transform: none; }
 }
 
@@ -708,6 +708,18 @@ a.list-row:hover .list-arrow { opacity: 1; transform: none; color: var(--accent)
 .talk-topics li { position: relative; padding-left: 20px; font-size: 15px; color: var(--ink-2); line-height: 1.5; }
 .talk-topics li::before { content: ""; position: absolute; left: 2px; top: 0.7em; width: 8px; height: 1px; background: var(--accent); }
 
+/* recognition */
+.recog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.recog-card { display: flex; flex-direction: column; overflow: hidden; }
+.recog-media { aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg-2); border-bottom: 1px solid var(--line); }
+.recog-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.recog-card:hover .recog-media img { transform: scale(1.035); }
+.recog-body { padding: 24px 26px 28px; }
+.recog-body .eyebrow { margin-bottom: 10px; }
+.recog-body h3 { font-family: var(--display); font-weight: 400; font-size: 1.65rem; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px; }
+.recog-body p:last-child { color: var(--muted); font-size: 15px; line-height: 1.65; margin: 0; }
+.recog-card.no-media .recog-body { padding-top: 28px; }
+
 /* watching & reading */
 .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
 .duo-card { padding: 28px 30px 14px; }
@@ -875,7 +887,7 @@ a.list-row:hover .list-arrow { opacity: 1; transform: none; color: var(--accent)
 @media (max-width: 1024px) {
   .hero-grid { gap: 48px; }
   .about-grid { gap: 48px; }
-  .more-grid, .doing { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .more-grid, .doing, .recog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .glance { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case { grid-template-columns: minmax(0, 1fr); }
   .case-side { border-left: 0; border-top: 1px solid var(--line); }
@@ -934,7 +946,7 @@ a.list-row:hover .list-arrow { opacity: 1; transform: none; color: var(--accent)
   .portrait-tag { left: 18px; bottom: 18px; }
   .glance { grid-template-columns: 1fr; gap: 12px; }
   .glance-title { font-size: 1.45rem; }
-  .more-grid, .doing { grid-template-columns: 1fr; }
+  .more-grid, .doing, .recog-grid { grid-template-columns: 1fr; }
   .doing li { padding: 22px 20px; }
   .case-main, .case-side { padding: 28px 22px; }
   .case-meta { grid-template-columns: 1fr 1fr; }
