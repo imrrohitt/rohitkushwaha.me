@@ -77,6 +77,9 @@ def load_medium() -> list[dict]:
             "topic": a.get("topic", "Writing"),
             "reading_time": a.get("reading_time", 5),
             "featured": bool(a.get("featured")),
+            "image": a.get("image"),
+            "image_alt": a.get("image_alt", ""),
+            "takeaways": a.get("takeaways", []),
             "draft": False,
         })
     return articles

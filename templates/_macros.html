@@ -47,17 +47,25 @@
 </ul>
 {% endmacro %}
 
-{% macro featured_article(w) %}
-<a class="card feature-article" href="{{ w.url }}"{% if w.external %} target="_blank" rel="noopener"{% endif %} data-reveal>
+{% macro featured_article(w, detailed=False) %}
+<a class="card feature-article{% if w.image %} has-cover{% endif %}" href="{{ w.url }}"{% if w.external %} target="_blank" rel="noopener"{% endif %} data-reveal>
   <span class="fa-glow" aria-hidden="true"></span>
-  <span class="fa-top">
-    <span class="chip chip-accent">Featured</span>
-    <span class="chip">{{ w.topic }}</span>
-    <span class="card-arrow">{{ icon("arrow-up-right", 18) }}</span>
+  {% if w.image %}<span class="fa-cover"><img src="{{ w.image }}" alt="{{ w.image_alt }}" loading="lazy"></span>{% endif %}
+  <span class="fa-content">
+    <span class="fa-top">
+      <span class="chip chip-accent">New · Featured</span>
+      <span class="chip">{{ w.topic }}</span>
+      <span class="card-arrow">{{ icon("arrow-up-right", 18) }}</span>
+    </span>
+    <span class="fa-title">{{ w.title }}</span>
+    <span class="fa-excerpt">{{ w.description }}</span>
+    {% if detailed and w.takeaways %}
+    <span class="fa-points">
+      {% for tk in w.takeaways %}<span>{{ icon("check", 15) }}{{ tk }}</span>{% endfor %}
+    </span>
+    {% endif %}
+    <span class="fa-meta">{% if w.external %}{{ icon("medium", 14) }}{% endif %} {{ w.source }} · {{ w.date | date("%B %d, %Y") }} · {{ w.reading_time }} min read</span>
   </span>
-  <span class="fa-title">{{ w.title }}</span>
-  <span class="fa-excerpt">{{ w.description }}</span>
-  <span class="fa-meta">{% if w.external %}{{ icon("medium", 14) }}{% endif %} {{ w.source }} · {{ w.date | date("%B %d, %Y") }} · {{ w.reading_time }} min read</span>
 </a>
 {% endmacro %}
 

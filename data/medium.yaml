@@ -1,4 +1,23 @@
 # Synced from Medium by generator/sync_medium.py — hand edits to excerpt/topic/featured/hidden are kept.
+- title: Your AI Agent Has 200 Tools. It Should Only See 3 at a Time.
+  url: https://medium.com/@imrohitkushwaha2001/your-ai-agent-has-200-tools-it-should-only-see-3-at-a-time-0a0310d788f6
+  date: 2026-10-21
+  excerpt: Most agents are handed every tool definition up front — a tax paid on every message. Dynamic tool loading lets
+    the model search for and load only the few tools a task needs. How it works, what it saves, and where OpenAI's tool search
+    fits in.
+  topic: AI
+  tags:
+  - ai
+  - artificial-intelligence
+  reading_time: 10
+  featured: true
+  image: /static/images/article-dynamic-tool-loading.webp
+  image_alt: Infographic comparing traditional tool loading with dynamic tool loading for AI agents
+  takeaways:
+  - Saves context space — only the tools a task needs are loaded
+  - Better tool selection — fewer look-alike tools, fewer wrong picks
+  - Scales to hundreds of tools without the clutter
+  - Finding a tool isn't permission to use it — check access when it runs
 - title: 'Your RAG Re-Ranker Might Be Obsolete: This New AI Model Costs $0.042'
   url: https://medium.com/@imrohitkushwaha2001/your-rag-re-ranker-might-be-obsolete-this-new-ai-model-costs-0-042-c732133892ec
   date: 2026-09-23
@@ -23,7 +42,6 @@
   - machine-learning
   - llm-quantization
   reading_time: 35
-  featured: true
 - title: 'Stop Writing Nested Try/Except Hell: The AWS Service That Replaces Your Entire Workflow Engine'
   url: https://medium.com/@imrohitkushwaha2001/stop-writing-nested-try-except-hell-the-aws-service-that-replaces-your-entire-workflow-engine-c992834fdabb
   date: 2026-09-05

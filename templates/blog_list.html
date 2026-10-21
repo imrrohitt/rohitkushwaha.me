@@ -8,7 +8,7 @@
 
 <div class="wrap">
   {% if featured_article %}
-  <div class="writing-feature">{{ feature(featured_article) }}</div>
+  <div class="writing-feature">{{ feature(featured_article, detailed=True) }}</div>
   {% endif %}
   {% for year, items in writing | groupby("date.year") | reverse %}
   <section class="year-group">

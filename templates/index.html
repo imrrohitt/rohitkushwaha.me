@@ -84,7 +84,10 @@
 
 <section class="section wrap">
   {{ section_head("04", "Writing", "Recent <em>articles</em>", "/blogs/", "All writing") }}
-  {{ writing_rows((([featured_article] if featured_article else []) + writing[:4]) | sort(attribute="date", reverse=true), show_topic=True, brief=True) }}
+  <div class="writing-grid">
+    {% if featured_article %}{{ feature(featured_article) }}{% endif %}
+    {{ writing_rows(writing[:4], show_topic=True, brief=True) }}
+  </div>
 </section>
 
 {% if talks %}

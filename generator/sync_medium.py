@@ -33,7 +33,7 @@ TOPICS = [
     ("AI", {"ai", "artificial-intelligence", "machine-learning", "llm", "llm-quantization", "model-quantization",
             "generative-ai-use-cases", "generative-ai", "rag"}),
 ]
-KEEP_FIELDS = ("excerpt", "topic", "featured", "hidden")
+KEEP_FIELDS = ("excerpt", "topic", "featured", "hidden", "image", "image_alt", "takeaways")
 
 
 def text_of(fragment: str) -> str:

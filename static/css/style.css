@@ -1198,3 +1198,25 @@ a.recog-card:hover .link-arrow { color: var(--accent); }
 .connect-actions .btn { justify-content: center; }
 @media (max-width: 900px) { .connect { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 28px 24px; } }
 @media (max-width: 640px) { .cta-book { padding: 18px 20px; } }
+
+/* Featured article with cover */
+.feature-article.has-cover { padding: 0; gap: 0; min-height: 0; overflow: hidden; }
+.feature-article .fa-content { display: flex; flex-direction: column; gap: 16px; padding: 30px 32px 28px; flex: 1; }
+.feature-article:not(.has-cover) { padding: 0; }
+.fa-cover { display: block; height: 230px; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+.fa-cover img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; transition: transform 1.2s var(--ease); }
+.feature-article:hover .fa-cover img { transform: scale(1.03); }
+.fa-content .fa-title { margin-top: 0; font-size: clamp(1.7rem, 2.4vw, 2.2rem); }
+.fa-points { display: grid; gap: 8px; }
+.fa-points > span { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+.fa-points .icon { color: var(--accent); margin-top: 3px; }
+.writing-feature .feature-article.has-cover { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); }
+.writing-feature .feature-article.has-cover .fa-cover { order: 2; height: auto; min-height: 380px; border-bottom: 0; border-left: 1px solid var(--line); }
+.writing-feature .fa-content { padding: 36px 40px; }
+.writing-feature .fa-content .fa-title { font-size: clamp(2rem, 3.2vw, 2.7rem); max-width: 20em; }
+@media (max-width: 900px) {
+  .writing-feature .feature-article.has-cover { display: flex; }
+  .writing-feature .feature-article.has-cover .fa-cover { order: 0; height: 220px; min-height: 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .writing-feature .fa-content { padding: 24px 22px; }
+}
+@media (max-width: 640px) { .fa-cover { height: 180px; } .feature-article .fa-content { padding: 22px 20px 22px; } }
