@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import writing_rows, featured_article as feature, page_head %}
+{% from "_macros.html" import writing_rows, featured_article as feature, page_head, section_head, reading_card %}
 {% block title %}Writing — {{ site.name }}{% endblock %}
 {% block description %}Articles by {{ site.name }} on AI, LLM inference, backend systems and cloud.{% endblock %}
 
@@ -18,5 +18,12 @@
   {% else %}
   <p class="empty">Nothing here yet — the first post is on its way.</p>
   {% endfor %}
+  {% if reading %}
+  <section class="reading-section">
+    {{ section_head("+", "Currently learning", "What I'm <em>reading</em>") }}
+    <p class="reading-note">Articles by other engineers that I'm studying — credited to their authors, with my own notes on what's worth taking away.</p>
+    {% for r in reading %}{{ reading_card(r) }}{% endfor %}
+  </section>
+  {% endif %}
 </div>
 {% endblock %}

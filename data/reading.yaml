@@ -1,0 +1,26 @@
+# Articles by other people that I'm learning from. Shown on /blogs/ under "What I'm reading".
+# These are NOT my writing — author and source are credited on every card.
+
+- title: The Kafka Optimization That Saved Us $350K a Year
+  author: Mayank
+  source: JioHotstar Engineering
+  url: https://blog.hotstar.com/the-kafka-optimization-that-saved-us-350k-a-year-48a0e05c3c08
+  date: 2026-10-19
+  read_minutes: 14
+  topics: [Kafka, Protobuf, Go, Scale]
+  summary: >-
+    JioHotstar's heartbeat events are 7.5 KB each, but most consumers need only about 1.1 KB.
+    Rather than fix it with a Kafka Connect transform, the team built a stateless Kafka-to-Kafka
+    service in Go that scans raw protobuf bytes, keeps only the needed fields and republishes a
+    slim event — with offset tracking that never loses a message.
+  stats:
+    - { value: "84.9%", label: "smaller messages" }
+    - { value: "~$350K", label: "saved every year" }
+    - { value: "100M", label: "messages a minute" }
+    - { value: "0", label: "messages lost" }
+  takeaways:
+    - "**Don't deserialize what you won't use.** Reading protobuf wire bytes and skipping unwanted fields is far cheaper than a full unmarshal."
+    - "**Build the safety contract first.** Commit only the highest contiguous acknowledged offset, so a crash replays messages instead of losing them (at-least-once)."
+    - "**Backpressure is a feature.** When the producer queue fills, workers block and lag grows visibly — instead of data being dropped silently."
+    - "**Rebalance carefully.** Cooperative-sticky rebalancing, and commit offsets *before* releasing partitions, avoids stop-the-world lag and generation errors."
+    - "**Fix bulk on the server, not the client.** One rich event keeps clients simple and consistent; slim it down after ingestion, before fan-out."

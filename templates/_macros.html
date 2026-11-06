@@ -222,3 +222,23 @@
   {% endfor %}
 </div>
 {% endmacro %}
+
+{% macro reading_card(r) %}
+<article class="card reading-card" data-reveal>
+  <div class="rc-head">
+    <p class="eyebrow"><span class="eyebrow-num">◆</span> Learning <span class="eyebrow-dot" aria-hidden="true"></span> {{ r.source }}</p>
+    <ul class="chips">{% for tp in r.topics %}<li class="chip">{{ tp }}</li>{% endfor %}</ul>
+  </div>
+  <h3 class="rc-title">{{ r.title }}</h3>
+  <p class="rc-by">by {{ r.author }} · {{ r.source }} · {{ r.date | date("%B %d, %Y") }} · {{ r.read_minutes }} min read</p>
+  <p class="rc-summary">{{ r.summary }}</p>
+  <dl class="mile-stats">
+    {% for st in r.stats %}<div><dd>{{ st.value }}</dd><dt>{{ st.label }}</dt></div>{% endfor %}
+  </dl>
+  <h4 class="mile-heading">What I took from it</h4>
+  <ul class="mile-points">
+    {% for tk in r.takeaways %}<li>{{ tk | md }}</li>{% endfor %}
+  </ul>
+  <p class="rc-foot"><a class="link-arrow" href="{{ r.url }}" target="_blank" rel="noopener">Read the original on {{ r.source }} {{ icon("arrow-up-right", 14) }}</a></p>
+</article>
+{% endmacro %}

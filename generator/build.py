@@ -195,6 +195,7 @@ def build(include_drafts: bool = False) -> None:
     projects, more_projects = project_data["projects"], project_data.get("more", [])
     experience = load_yaml("experience")
     milestones = load_yaml("milestones")
+    reading = sorted(load_yaml("reading"), key=sort_key, reverse=True)
     talks = sorted(load_yaml("talks"), key=sort_key, reverse=True)
     videos = sorted(load_yaml("videos"), key=sort_key, reverse=True)
     papers = sorted(load_yaml("papers"), key=sort_key, reverse=True)
@@ -244,7 +245,7 @@ def build(include_drafts: bool = False) -> None:
            writing=[w for w in writing if w is not featured_article][:5], projects=projects,
            experience=experience, talks=talks[:2], videos=videos[:5], papers=papers[:5], explore=explore,
            milestones=[m for m in milestones if m.get("home")])
-    render("blog_list.html", "/blogs/", "blogs", writing=writing, featured_article=featured_article)
+    render("blog_list.html", "/blogs/", "blogs", writing=writing, featured_article=featured_article, reading=reading)
     for i, post in enumerate(posts):
         newer = posts[i - 1] if i > 0 else None
         older = posts[i + 1] if i + 1 < len(posts) else None
